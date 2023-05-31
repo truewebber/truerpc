@@ -1,3 +1,4 @@
+#include <iostream>
 #include "main_window.h"
 
 MyWindow::MyWindow()
