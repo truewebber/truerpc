@@ -1,9 +1,7 @@
 #include <iostream>
 #include "main_window.h"
 
-MyWindow::MyWindow()
-        : m_button("Click Me")
-{
+MyWindow::MyWindow() : m_button("Click Me") {
     set_title("GTK Example");
     set_default_size(400, 300);
 
@@ -13,11 +11,8 @@ MyWindow::MyWindow()
     show_all();
 }
 
-MyWindow::~MyWindow()
-{
-}
+MyWindow::~MyWindow() = default;
 
-void MyWindow::on_button_clicked()
-{
+void MyWindow::on_button_clicked() {
     std::cout << "Button clicked!" << std::endl;
 }

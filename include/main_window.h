@@ -3,11 +3,11 @@
 
 #include <gtkmm.h>
 
-class MyWindow : public Gtk::Window
-{
+class MyWindow : public Gtk::Window {
 public:
     MyWindow();
-    virtual ~MyWindow();
+
+    ~MyWindow() override;
 
 private:
     void on_button_clicked();
