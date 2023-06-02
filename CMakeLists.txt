@@ -10,5 +10,5 @@ include_directories(include ${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 add_definitions(${GTKMM_CFLAGS_OTHER})
 
-add_executable(truerpc src/main.cpp src/main_window.cpp)
+add_executable(truerpc src/main.c src/main_window.c)
 target_link_libraries(truerpc ${GTKMM_LIBRARIES})

@@ -1,18 +1,9 @@
-#ifndef MY_WINDOW_H
-#define MY_WINDOW_H
+#ifndef UI_H
+#define UI_H
 
-#include <gtkmm.h>
+#include <gtk/gtk.h>
 
-class MyWindow : public Gtk::Window {
-public:
-    MyWindow();
-
-    ~MyWindow() override;
-
-private:
-    void on_button_clicked();
-
-    Gtk::Button m_button;
-};
+// Function to create the UI
+GtkWidget* create_ui();
 
 #endif
