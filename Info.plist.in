@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>@TrueRPC_DISPLAY_NAME@</string>
+    <!-- Bundle identifier -->
+    <key>CFBundleIdentifier</key>
+    <string>@MACOSX_FRAMEWORK_IDENTIFIER@</string>
+    <!-- Version numbers -->
+    <key>CFBundleVersion</key>
+    <string>@TrueRPC_VERSION@</string>
+    <key>CFBundleShortVersionString</key>
+    <string>@TrueRPC_VERSION_MAJOR@.@TrueRPC_VERSION_MINOR@</string>
+    <!-- Executable name -->
+    <key>CFBundleExecutable</key>
+    <string>${BINARY_NAME}</string>
+    <!-- Icon file name -->
+    <key>CFBundleIconFile</key>
+    <string>icon.tiff</string>
+</dict>
+</plist>

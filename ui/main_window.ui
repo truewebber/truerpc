@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <requires lib="gtk" version="4.0"/>
+    <object class="GtkApplicationWindow">
+        <property name="title">gRPC Client App</property>
+        <property name="default-width">800</property>
+        <property name="default-height">600</property>
+        <child>
+            <object class="GtkLabel">
+                <property name="label">Select a .proto file to get started</property>
+            </object>
+        </child>
+    </object>
+</interface>
