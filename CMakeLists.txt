@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.24)
 
 set(PROJECT_NAME TrueRPC)
 set(BINARY_NAME truerpc)
@@ -23,12 +23,11 @@ set(SOURCES
         src/main.c
         src/grpc_client.c
         src/proto_parser.c
+        src/main_window.c
 )
 
 # Target executable
 add_executable(${BINARY_NAME} ${SOURCES})
-
-#link_directories(${GTK4_LIBRARY_DIRS})
 
 # Link libraries
 target_link_libraries(${BINARY_NAME} PRIVATE
