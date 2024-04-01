@@ -1,10 +1,13 @@
 #include <gtk/gtk.h>
 #include <main_window.h>
+#include <quit.h>
 
 const char bundle_name[] = "com.truewebber.truerpc";
 
 void activate(GtkApplication *app, gpointer user_data) {
     GtkWidget *window = get_main_window(app);
+
+    handle_quit_shortcut_event(app, window);
 
     gtk_widget_set_visible(window, true);
 }

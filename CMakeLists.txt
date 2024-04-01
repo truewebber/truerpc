@@ -24,6 +24,9 @@ set(SOURCES
         src/grpc_client.c
         src/proto_parser.c
         src/main_window.c
+        src/quit.c
+        src/left_pane.c
+        src/right_pane.c
 )
 
 # Target executable
