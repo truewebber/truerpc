@@ -19,7 +19,7 @@ GtkWidget *get_main_window(GtkApplication *app) {
     hpaned = gtk_paned_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_window_set_child(GTK_WINDOW(window), hpaned);
 
-    GtkWidget *left_pane = build_left_pane();
+    GtkWidget *left_pane = build_left_pane(GTK_WINDOW(window));
     gtk_paned_set_start_child(GTK_PANED(hpaned), left_pane);
     gtk_paned_set_position(GTK_PANED(hpaned), left_pane_width);
 
