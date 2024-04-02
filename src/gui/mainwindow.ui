@@ -3,8 +3,8 @@
     <author/>
     <comment/>
     <exportmacro/>
-    <class>Ui::MainWindow</class>
-    <widget class="QWidget" name="Ui::MainWindow">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
         <property name="geometry">
             <rect>
                 <x>0</x>
