@@ -4,20 +4,18 @@
 #include <QTextEdit>
 
 MainWindow::MainWindow(QWidget *parent)
-        : QMainWindow(parent)
-        , ui(new Ui::MainWindow)
-{
+        : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     // Create a horizontal splitter widget to hold two text edit widgets
-    QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
+    QSplitter *splitter = new QSplitter(Qt::Horizontal, this);
 
     // Create the first text edit widget
-    QTextEdit* textEdit1 = new QTextEdit();
+    QTextEdit *textEdit1 = new QTextEdit();
     textEdit1->setPlainText("Column 1: You can type here...");
 
     // Create the second text edit widget
-    QTextEdit* textEdit2 = new QTextEdit();
+    QTextEdit *textEdit2 = new QTextEdit();
     textEdit2->setPlainText("Column 2: You can also type here...");
 
     // Add the text edit widgets to the splitter
@@ -28,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(splitter);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
