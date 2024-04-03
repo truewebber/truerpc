@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
     // Create a horizontal splitter widget to hold two text edit widgets
-    QSplitter *splitter = new QSplitter(Qt::Horizontal, this);
+    auto splitter = new QSplitter(Qt::Horizontal, this);
 
     splitter->setStyleSheet(R"(
     QSplitter::handle {
@@ -24,26 +24,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         background-color: #aaaaaa; /* Darker grey when hovered */
     }
 
-//    QSplitter::handle:horizontal {
-//        width: 3px; /* Horizontal handle width */
-//    }
-
     QSplitter::handle:vertical {
         height: 1px; /* Vertical handle height */
     }
 )");
 
     // Create the left widget (red) and a layout for its contents
-    QWidget* leftWidget = new QWidget();
-    QVBoxLayout* leftLayout = new QVBoxLayout(leftWidget);
+    auto leftWidget = new QWidget();
+    auto leftLayout = new QVBoxLayout(leftWidget);
 //    leftWidget->setStyleSheet("background-color: red;");
 
     // Create the top box for the left widget and set its background
-    QWidget* topBox = new QWidget();
+    auto topBox = new QWidget();
     topBox->setStyleSheet("background-color: lightgrey;margin:0;"); // Use any color you prefer
 
     // Create the button to be placed at the bottom of the left widget
-    QPushButton* button = new QPushButton("Click Me");
+    auto button = new QPushButton("Click Me");
     button->setStyleSheet("background-color: pink;margin:0;");
 
     // Add the top box and button to the layout, with the top box expanding to fill the space
@@ -55,13 +51,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(button, &QPushButton::clicked, this, [this]() {
         // Use a custom dialog if you've defined one
         // CustomDialog* dialog = new CustomDialog(this);
-        QDialog* dialog = new QDialog(this, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
+        auto dialog = new QDialog(this, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint);
         dialog->setWindowTitle("Modal Dialog");
         dialog->setModal(true);
         dialog->setFixedSize(300,200);
 
-        QVBoxLayout* layout = new QVBoxLayout(dialog);
-        QLabel* label = new QLabel("This is a modal dialog", dialog);
+        auto layout = new QVBoxLayout(dialog);
+        auto label = new QLabel("This is a modal dialog", dialog);
         layout->addWidget(label);
         dialog->setLayout(layout);
 
@@ -72,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     leftLayout->setContentsMargins(0, 0, 0, 0);
 
     // Create the second widget and set its background to blue
-    QWidget* blueWidget = new QWidget();
+    auto blueWidget = new QWidget();
     blueWidget->setStyleSheet("background-color: blue;");
 
     // Add the widgets to the splitter

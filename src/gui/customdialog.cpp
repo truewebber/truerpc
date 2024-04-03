@@ -3,8 +3,8 @@
 #include <QVBoxLayout>
 
 CustomDialog::CustomDialog(QWidget *parent) : QDialog(parent) {
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    QLabel* label = new QLabel("This is a modal dialog", this);
+    auto layout = new QVBoxLayout(this);
+    auto label = new QLabel("This is a modal dialog", this);
     layout->addWidget(label);
     setLayout(layout);
 }
