@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */; };
+		64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E62BC0060C003220E4 /* ContentView.swift */; };
+		64BF73E92BC0060C003220E4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* Item.swift */; };
+		64BF73EB2BC0060D003220E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BF73EA2BC0060D003220E4 /* Assets.xcassets */; };
+		64BF73EE2BC0060D003220E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BF73ED2BC0060D003220E4 /* Preview Assets.xcassets */; };
+		64BF73F92BC0060D003220E4 /* TrueRPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73F82BC0060D003220E4 /* TrueRPCTests.swift */; };
+		64BF74032BC0060D003220E4 /* TrueRPCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF74022BC0060D003220E4 /* TrueRPCUITests.swift */; };
+		64BF74052BC0060D003220E4 /* TrueRPCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF74042BC0060D003220E4 /* TrueRPCUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64BF73F52BC0060D003220E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64BF73D92BC0060C003220E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64BF73E02BC0060C003220E4;
+			remoteInfo = TrueRPC;
+		};
+		64BF73FF2BC0060D003220E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64BF73D92BC0060C003220E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64BF73E02BC0060C003220E4;
+			remoteInfo = TrueRPC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
+		64BF73E62BC0060C003220E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64BF73E82BC0060C003220E4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		64BF73EA2BC0060D003220E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64BF73ED2BC0060D003220E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrueRPC.entitlements; sourceTree = "<group>"; };
+		64BF73F42BC0060D003220E4 /* TrueRPCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueRPCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BF73F82BC0060D003220E4 /* TrueRPCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCTests.swift; sourceTree = "<group>"; };
+		64BF73FE2BC0060D003220E4 /* TrueRPCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueRPCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BF74022BC0060D003220E4 /* TrueRPCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCUITests.swift; sourceTree = "<group>"; };
+		64BF74042BC0060D003220E4 /* TrueRPCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64BF73DE2BC0060C003220E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73F12BC0060D003220E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73FB2BC0060D003220E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64BF73D82BC0060C003220E4 = {
+			isa = PBXGroup;
+			children = (
+				64BF73E32BC0060C003220E4 /* TrueRPC */,
+				64BF73F72BC0060D003220E4 /* TrueRPCTests */,
+				64BF74012BC0060D003220E4 /* TrueRPCUITests */,
+				64BF73E22BC0060C003220E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64BF73E22BC0060C003220E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64BF73E12BC0060C003220E4 /* TrueRPC.app */,
+				64BF73F42BC0060D003220E4 /* TrueRPCTests.xctest */,
+				64BF73FE2BC0060D003220E4 /* TrueRPCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64BF73E32BC0060C003220E4 /* TrueRPC */ = {
+			isa = PBXGroup;
+			children = (
+				64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */,
+				64BF73E62BC0060C003220E4 /* ContentView.swift */,
+				64BF73E82BC0060C003220E4 /* Item.swift */,
+				64BF73EA2BC0060D003220E4 /* Assets.xcassets */,
+				64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */,
+				64BF73EC2BC0060D003220E4 /* Preview Content */,
+			);
+			path = TrueRPC;
+			sourceTree = "<group>";
+		};
+		64BF73EC2BC0060D003220E4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				64BF73ED2BC0060D003220E4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64BF73F72BC0060D003220E4 /* TrueRPCTests */ = {
+			isa = PBXGroup;
+			children = (
+				64BF73F82BC0060D003220E4 /* TrueRPCTests.swift */,
+			);
+			path = TrueRPCTests;
+			sourceTree = "<group>";
+		};
+		64BF74012BC0060D003220E4 /* TrueRPCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				64BF74022BC0060D003220E4 /* TrueRPCUITests.swift */,
+				64BF74042BC0060D003220E4 /* TrueRPCUITestsLaunchTests.swift */,
+			);
+			path = TrueRPCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64BF73E02BC0060C003220E4 /* TrueRPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64BF74082BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPC" */;
+			buildPhases = (
+				64BF73DD2BC0060C003220E4 /* Sources */,
+				64BF73DE2BC0060C003220E4 /* Frameworks */,
+				64BF73DF2BC0060C003220E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrueRPC;
+			productName = TrueRPC;
+			productReference = 64BF73E12BC0060C003220E4 /* TrueRPC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64BF73F32BC0060D003220E4 /* TrueRPCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64BF740B2BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPCTests" */;
+			buildPhases = (
+				64BF73F02BC0060D003220E4 /* Sources */,
+				64BF73F12BC0060D003220E4 /* Frameworks */,
+				64BF73F22BC0060D003220E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64BF73F62BC0060D003220E4 /* PBXTargetDependency */,
+			);
+			name = TrueRPCTests;
+			productName = TrueRPCTests;
+			productReference = 64BF73F42BC0060D003220E4 /* TrueRPCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		64BF73FD2BC0060D003220E4 /* TrueRPCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64BF740E2BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPCUITests" */;
+			buildPhases = (
+				64BF73FA2BC0060D003220E4 /* Sources */,
+				64BF73FB2BC0060D003220E4 /* Frameworks */,
+				64BF73FC2BC0060D003220E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64BF74002BC0060D003220E4 /* PBXTargetDependency */,
+			);
+			name = TrueRPCUITests;
+			productName = TrueRPCUITests;
+			productReference = 64BF73FE2BC0060D003220E4 /* TrueRPCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64BF73D92BC0060C003220E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					64BF73E02BC0060C003220E4 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					64BF73F32BC0060D003220E4 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 64BF73E02BC0060C003220E4;
+					};
+					64BF73FD2BC0060D003220E4 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 64BF73E02BC0060C003220E4;
+					};
+				};
+			};
+			buildConfigurationList = 64BF73DC2BC0060C003220E4 /* Build configuration list for PBXProject "TrueRPC" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64BF73D82BC0060C003220E4;
+			productRefGroup = 64BF73E22BC0060C003220E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64BF73E02BC0060C003220E4 /* TrueRPC */,
+				64BF73F32BC0060D003220E4 /* TrueRPCTests */,
+				64BF73FD2BC0060D003220E4 /* TrueRPCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64BF73DF2BC0060C003220E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BF73EE2BC0060D003220E4 /* Preview Assets.xcassets in Resources */,
+				64BF73EB2BC0060D003220E4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73F22BC0060D003220E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73FC2BC0060D003220E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64BF73DD2BC0060C003220E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */,
+				64BF73E92BC0060C003220E4 /* Item.swift in Sources */,
+				64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73F02BC0060D003220E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BF73F92BC0060D003220E4 /* TrueRPCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BF73FA2BC0060D003220E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64BF74052BC0060D003220E4 /* TrueRPCUITestsLaunchTests.swift in Sources */,
+				64BF74032BC0060D003220E4 /* TrueRPCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64BF73F62BC0060D003220E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64BF73E02BC0060C003220E4 /* TrueRPC */;
+			targetProxy = 64BF73F52BC0060D003220E4 /* PBXContainerItemProxy */;
+		};
+		64BF74002BC0060D003220E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64BF73E02BC0060C003220E4 /* TrueRPC */;
+			targetProxy = 64BF73FF2BC0060D003220E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		64BF74062BC0060D003220E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64BF74072BC0060D003220E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		64BF74092BC0060D003220E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TrueRPC/TrueRPC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrueRPC/Preview Content\"";
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		64BF740A2BC0060D003220E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TrueRPC/TrueRPC.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrueRPC/Preview Content\"";
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		64BF740C2BC0060D003220E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrueRPC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrueRPC";
+			};
+			name = Debug;
+		};
+		64BF740D2BC0060D003220E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrueRPC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrueRPC";
+			};
+			name = Release;
+		};
+		64BF740F2BC0060D003220E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TrueRPC;
+			};
+			name = Debug;
+		};
+		64BF74102BC0060D003220E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57UWRPUUGM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.truewebber.TrueRPCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TrueRPC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64BF73DC2BC0060C003220E4 /* Build configuration list for PBXProject "TrueRPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BF74062BC0060D003220E4 /* Debug */,
+				64BF74072BC0060D003220E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64BF74082BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BF74092BC0060D003220E4 /* Debug */,
+				64BF740A2BC0060D003220E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64BF740B2BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BF740C2BC0060D003220E4 /* Debug */,
+				64BF740D2BC0060D003220E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64BF740E2BC0060D003220E4 /* Build configuration list for PBXNativeTarget "TrueRPCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64BF740F2BC0060D003220E4 /* Debug */,
+				64BF74102BC0060D003220E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64BF73D92BC0060C003220E4 /* Project object */;
+}
