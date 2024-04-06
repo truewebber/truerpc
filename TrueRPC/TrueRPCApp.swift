@@ -1,10 +1,3 @@
-//
-//  TrueRPCApp.swift
-//  TrueRPC
-//
-//  Created by Aleksey Kish on 05/04/2024.
-//
-
 import SwiftUI
 import SwiftData
 
