@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640123DF2BFBD5B2008F1B34 /* AddProtoSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */; };
 		64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */; };
 		64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E62BC0060C003220E4 /* ContentView.swift */; };
-		64BF73E92BC0060C003220E4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* Item.swift */; };
+		64BF73E92BC0060C003220E4 /* ProtoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* ProtoSource.swift */; };
 		64BF73EB2BC0060D003220E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BF73EA2BC0060D003220E4 /* Assets.xcassets */; };
 		64BF73EE2BC0060D003220E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BF73ED2BC0060D003220E4 /* Preview Assets.xcassets */; };
 		64BF73F92BC0060D003220E4 /* TrueRPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73F82BC0060D003220E4 /* TrueRPCTests.swift */; };
@@ -35,10 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProtoSourceView.swift; path = ../../truerpc/TrueRPC/AddProtoSourceView.swift; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
 		64BF73E62BC0060C003220E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		64BF73E82BC0060C003220E4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		64BF73E82BC0060C003220E4 /* ProtoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSource.swift; sourceTree = "<group>"; };
 		64BF73EA2BC0060D003220E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64BF73ED2BC0060D003220E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrueRPC.entitlements; sourceTree = "<group>"; };
@@ -99,10 +101,11 @@
 			children = (
 				64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */,
 				64BF73E62BC0060C003220E4 /* ContentView.swift */,
-				64BF73E82BC0060C003220E4 /* Item.swift */,
+				64BF73E82BC0060C003220E4 /* ProtoSource.swift */,
 				64BF73EA2BC0060D003220E4 /* Assets.xcassets */,
 				64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */,
 				64BF73EC2BC0060D003220E4 /* Preview Content */,
+				640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */,
 			);
 			path = TrueRPC;
 			sourceTree = "<group>";
@@ -196,7 +199,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					64BF73E02BC0060C003220E4 = {
 						CreatedOnToolsVersion = 15.3;
@@ -262,8 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640123DF2BFBD5B2008F1B34 /* AddProtoSourceView.swift in Sources */,
 				64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */,
-				64BF73E92BC0060C003220E4 /* Item.swift in Sources */,
+				64BF73E92BC0060C003220E4 /* ProtoSource.swift in Sources */,
 				64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +339,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -398,6 +403,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -430,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TrueRPC/Preview Content\"";
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -461,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TrueRPC/Preview Content\"";
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -488,6 +496,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -507,6 +516,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -525,6 +535,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -542,6 +553,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57UWRPUUGM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
