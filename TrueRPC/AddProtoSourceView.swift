@@ -1,22 +1,35 @@
 import SwiftUI
+import SwiftData
 
 struct AddProtoSourceView: View {
 	@Environment(\.dismiss) private var dismiss
 	@Environment(\.modelContext) private var modelContext
-	@Binding var protoSource: String
-	@Binding var workDir: String
+	
+	@State private var protoSource: ProtoSource
 	@State private var isSelectingProtoSource = false
 	@State private var isSelectingWorkDir = false
-
+	
+	private var isEditing: Bool
+	
+	init(protoSource: ProtoSource? = nil) {
+		if let protoSource = protoSource {
+			self._protoSource = State(initialValue: protoSource)
+			self.isEditing = true
+		} else {
+			self._protoSource = State(initialValue: ProtoSource(source: "", workDir: ""))
+			self.isEditing = false
+		}
+	}
+	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Text("Add New Proto Source")
+			Text(isEditing ? "Edit Proto Source" : "Add New Proto Source")
 				.font(.headline)
 				.padding(.top, 10)
-
+			
 			CustomFileInputField(
 				title: "Proto Source:",
-				text: $protoSource,
+				text: $protoSource.source,
 				action: { isSelectingProtoSource.toggle() }
 			)
 			.fileImporter(
@@ -25,13 +38,13 @@ struct AddProtoSourceView: View {
 				allowsMultipleSelection: false
 			) { result in
 				if case .success(let urls) = result, let url = urls.first {
-					protoSource = url.path
+					protoSource.source = url.path
 				}
 			}
-
+			
 			CustomFileInputField(
 				title: "Working directory:",
-				text: $workDir,
+				text: $protoSource.workDir,
 				action: { isSelectingWorkDir.toggle() }
 			)
 			.fileImporter(
@@ -40,70 +53,48 @@ struct AddProtoSourceView: View {
 				allowsMultipleSelection: false
 			) { result in
 				if case .success(let urls) = result, let url = urls.first {
-					workDir = url.path
+					protoSource.workDir = url.path
 				}
 			}
-
+			
+			Spacer().frame(height: 15)
+			
 			HStack {
 				Button("Cancel") {
 					dismiss()
 				}
 				Spacer()
 				Button("Save") {
-					addProtoSource()
+					saveProtoSource()
 					dismiss()
 				}
-				.disabled(protoSource.isEmpty || workDir.isEmpty)
+				.disabled(protoSource.source.isEmpty || protoSource.workDir.isEmpty)
 			}
 		}
 		.padding()
+		.frame(minWidth: 500, idealWidth: 600, maxWidth: .infinity, minHeight: 150, idealHeight: 250, maxHeight: .infinity)
 		.background(Color(.windowBackgroundColor))
 	}
-
-	private func addProtoSource() {
-		withAnimation {
-			let newProtoSource = ProtoSource(source: protoSource, workDir: workDir)
-			modelContext.insert(newProtoSource)
-			protoSource = ""
-			workDir = ""
-		}
-	}
-}
-
-struct CustomFileInputField: View {
-	let title: String
-	@Binding var text: String
-	let action: () -> Void
-
-	var body: some View {
-		VStack(alignment: .leading, spacing: 4) {
-			Text(title)
-				.font(.caption)
-				.foregroundColor(.secondary)
-			HStack {
-				TextField("", text: $text)
-					.textFieldStyle(PlainTextFieldStyle())
-				HStack(spacing: 0) {
-					Button(action: action) {
-						Image(systemName: "plus")
-							.foregroundColor(.blue)
-					}
-					.buttonStyle(PlainButtonStyle())
-					Button(action: action) {
-						Image(systemName: "folder")
-							.foregroundColor(.blue)
-					}
-					.buttonStyle(PlainButtonStyle())
-				}
-			}
-			.padding(8)
-			.background(Color(.textBackgroundColor))
-			.cornerRadius(6)
+	
+	private func saveProtoSource() {
+		if !isEditing {
+			modelContext.insert(protoSource)
 		}
 	}
 }
 
 #Preview {
-	AddProtoSourceView(protoSource: .constant(""), workDir: .constant(""))
-		.modelContainer(for: ProtoSource.self, inMemory: true)
+	do {
+		let config = ModelConfiguration(isStoredInMemoryOnly: true)
+		let container = try ModelContainer(for: ProtoSource.self, configurations: config)
+		
+		let sampleProtoSource = ProtoSource(source: "/path/to/sample.proto", workDir: "/path/to/work/dir")
+		container.mainContext.insert(sampleProtoSource)
+		
+		return AddProtoSourceView(protoSource: sampleProtoSource)
+			.modelContainer(container)
+	} catch {
+		return Text("Failed to create preview: \(error.localizedDescription)")
+	}
 }
+
