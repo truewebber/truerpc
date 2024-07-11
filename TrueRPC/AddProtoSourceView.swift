@@ -9,67 +9,40 @@ struct AddProtoSourceView: View {
 	@State private var isSelectingWorkDir = false
 
 	var body: some View {
-		VStack(spacing: 10) { // Reduced spacing between elements
+		VStack(alignment: .leading, spacing: 16) {
 			Text("Add New Proto Source")
 				.font(.headline)
-				.padding(.top, 10) // Small top padding
+				.padding(.top, 10)
 
-			Form {
-				HStack {
-					Text("Proto Source:")
-					Spacer()
-					TextField("Select Proto Source", text: $protoSource)
-						.disabled(true)
-						.textFieldStyle(PlainTextFieldStyle())
-						.frame(maxWidth: 250)
-					Button("Browse") {
-						isSelectingProtoSource.toggle()
-					}
-				}
-				.padding(.horizontal)
-				.fileImporter(
-					isPresented: $isSelectingProtoSource,
-					allowedContentTypes: [.data],
-					allowsMultipleSelection: false
-				) { result in
-					switch result {
-					case .success(let urls):
-						if let url = urls.first {
-							protoSource = url.path
-						}
-					case .failure(let error):
-						print("Failed to pick proto source: \(error.localizedDescription)")
-					}
-				}
-
-				HStack {
-					Text("Work Directory:")
-					Spacer()
-					TextField("Select Work Directory", text: $workDir)
-						.disabled(true)
-						.textFieldStyle(PlainTextFieldStyle())
-						.frame(maxWidth: 250)
-					Button("Browse") {
-						isSelectingWorkDir.toggle()
-					}
-				}
-				.padding(.horizontal)
-				.fileImporter(
-					isPresented: $isSelectingWorkDir,
-					allowedContentTypes: [.folder],
-					allowsMultipleSelection: false
-				) { result in
-					switch result {
-					case .success(let urls):
-						if let url = urls.first {
-							workDir = url.path
-						}
-					case .failure(let error):
-						print("Failed to pick work directory: \(error.localizedDescription)")
-					}
+			CustomFileInputField(
+				title: "Proto Source:",
+				text: $protoSource,
+				action: { isSelectingProtoSource.toggle() }
+			)
+			.fileImporter(
+				isPresented: $isSelectingProtoSource,
+				allowedContentTypes: [.data],
+				allowsMultipleSelection: false
+			) { result in
+				if case .success(let urls) = result, let url = urls.first {
+					protoSource = url.path
 				}
 			}
-			.padding(.horizontal)
+
+			CustomFileInputField(
+				title: "Working directory:",
+				text: $workDir,
+				action: { isSelectingWorkDir.toggle() }
+			)
+			.fileImporter(
+				isPresented: $isSelectingWorkDir,
+				allowedContentTypes: [.folder],
+				allowsMultipleSelection: false
+			) { result in
+				if case .success(let urls) = result, let url = urls.first {
+					workDir = url.path
+				}
+			}
 
 			HStack {
 				Button("Cancel") {
@@ -82,18 +55,50 @@ struct AddProtoSourceView: View {
 				}
 				.disabled(protoSource.isEmpty || workDir.isEmpty)
 			}
-			.padding([.horizontal, .bottom])
 		}
-		.frame(width: 400, height: 200)
+		.padding()
+		.background(Color(.windowBackgroundColor))
 	}
 
 	private func addProtoSource() {
 		withAnimation {
 			let newProtoSource = ProtoSource(source: protoSource, workDir: workDir)
 			modelContext.insert(newProtoSource)
-			// Clear input fields after adding
 			protoSource = ""
 			workDir = ""
+		}
+	}
+}
+
+struct CustomFileInputField: View {
+	let title: String
+	@Binding var text: String
+	let action: () -> Void
+
+	var body: some View {
+		VStack(alignment: .leading, spacing: 4) {
+			Text(title)
+				.font(.caption)
+				.foregroundColor(.secondary)
+			HStack {
+				TextField("", text: $text)
+					.textFieldStyle(PlainTextFieldStyle())
+				HStack(spacing: 0) {
+					Button(action: action) {
+						Image(systemName: "plus")
+							.foregroundColor(.blue)
+					}
+					.buttonStyle(PlainButtonStyle())
+					Button(action: action) {
+						Image(systemName: "folder")
+							.foregroundColor(.blue)
+					}
+					.buttonStyle(PlainButtonStyle())
+				}
+			}
+			.padding(8)
+			.background(Color(.textBackgroundColor))
+			.cornerRadius(6)
 		}
 	}
 }
