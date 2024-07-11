@@ -21,8 +21,7 @@ struct ContentView: View {
 					}
 					.swipeActions(edge: .trailing, allowsFullSwipe: true) {
 						Button {
-							selectedProtoSource = protoSource
-							isShowingModal = true
+							editNewProtoSource(protoSource: protoSource)
 						} label: {
 							Label("Edit", systemImage: "pencil")
 						}
@@ -44,9 +43,7 @@ struct ContentView: View {
 					}
 				}
 				ToolbarItem(placement: .automatic) {
-					Button(action: {
-						isShowingModal = true
-					}) {
+					Button(action: addNewProtoSource) {
 						Label("Add Proto Source", systemImage: "plus")
 					}
 				}
@@ -63,6 +60,16 @@ struct ContentView: View {
 
 	private func toggleSidebar() {
 		NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+	}
+	
+	private func addNewProtoSource() {
+		isShowingModal = true
+		selectedProtoSource = nil
+	}
+	
+	private func editNewProtoSource(protoSource: ProtoSource) {
+		isShowingModal = true
+		selectedProtoSource = protoSource
 	}
 
 	private func deleteProtoSource(protoSource: ProtoSource) {
