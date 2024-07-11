@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		640123DF2BFBD5B2008F1B34 /* AddProtoSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */; };
+		647FDF032C405DBC00E19112 /* CustomFileInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647FDF022C405DBC00E19112 /* CustomFileInputField.swift */; };
+		647FDF052C40603C00E19112 /* AddProtoSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647FDF042C40603C00E19112 /* AddProtoSourceView.swift */; };
 		64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */; };
 		64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E62BC0060C003220E4 /* ContentView.swift */; };
 		64BF73E92BC0060C003220E4 /* ProtoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* ProtoSource.swift */; };
@@ -36,7 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddProtoSourceView.swift; path = ../../truerpc/TrueRPC/AddProtoSourceView.swift; sourceTree = "<group>"; };
+		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
+		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
 		64BF73E62BC0060C003220E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,7 +107,8 @@
 				64BF73EA2BC0060D003220E4 /* Assets.xcassets */,
 				64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */,
 				64BF73EC2BC0060D003220E4 /* Preview Content */,
-				640123DE2BFBD5B2008F1B34 /* AddProtoSourceView.swift */,
+				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
+				647FDF042C40603C00E19112 /* AddProtoSourceView.swift */,
 			);
 			path = TrueRPC;
 			sourceTree = "<group>";
@@ -265,7 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				640123DF2BFBD5B2008F1B34 /* AddProtoSourceView.swift in Sources */,
+				647FDF052C40603C00E19112 /* AddProtoSourceView.swift in Sources */,
+				647FDF032C405DBC00E19112 /* CustomFileInputField.swift in Sources */,
 				64BF73E72BC0060C003220E4 /* ContentView.swift in Sources */,
 				64BF73E92BC0060C003220E4 /* ProtoSource.swift in Sources */,
 				64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */,

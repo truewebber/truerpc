@@ -5,11 +5,9 @@ struct ContentView: View {
 	@Environment(\.modelContext) private var modelContext
 	// main state
 	@Query private var protoSources: [ProtoSource]
-	// state to open modal window
-	@State private var showAddProtoSourceView = false
-	// state for modal window
-	@State private var protoSource = ""
-	@State private var workDir = ""
+	// add proto source state
+	@State private var isShowingModal = false
+	@State private var selectedProtoSource: ProtoSource?
 
 	var body: some View {
 		NavigationView {
@@ -23,9 +21,10 @@ struct ContentView: View {
 					}
 					.swipeActions(edge: .trailing, allowsFullSwipe: true) {
 						Button {
-							
+							selectedProtoSource = protoSource
+							isShowingModal = true
 						} label: {
-							Label("Custom Action", systemImage: "pencil")
+							Label("Edit", systemImage: "pencil")
 						}
 						.tint(.blue)
 						Button(role: .destructive) {
@@ -46,14 +45,18 @@ struct ContentView: View {
 				}
 				ToolbarItem(placement: .automatic) {
 					Button(action: {
-						showAddProtoSourceView = true
+						isShowingModal = true
 					}) {
 						Label("Add Proto Source", systemImage: "plus")
 					}
 				}
 			}
-			.sheet(isPresented: $showAddProtoSourceView) {
-				AddProtoSourceView(protoSource: $protoSource, workDir: $workDir)
+			.sheet(isPresented: $isShowingModal) {
+				if let protoSource = selectedProtoSource {
+					AddProtoSourceView(protoSource: protoSource)
+				} else {
+					AddProtoSourceView()
+				}
 			}
 		}
 	}
