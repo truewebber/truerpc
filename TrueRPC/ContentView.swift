@@ -3,9 +3,11 @@ import SwiftUI
 
 struct ContentView: View {
 	@Environment(\.modelContext) private var modelContext
+	// main state
 	@Query private var protoSources: [ProtoSource]
-	@State private var isSidebarVisible = true
+	// state to open modal window
 	@State private var showAddProtoSourceView = false
+	// state for modal window
 	@State private var protoSource = ""
 	@State private var workDir = ""
 
@@ -21,11 +23,11 @@ struct ContentView: View {
 					}
 					.swipeActions(edge: .trailing, allowsFullSwipe: true) {
 						Button {
-							// Your custom action here
+							
 						} label: {
 							Label("Custom Action", systemImage: "pencil")
 						}
-						.tint(.blue) // Customize the button color
+						.tint(.blue)
 						Button(role: .destructive) {
 							withAnimation {
 								deleteProtoSource(protoSource: protoSource)
@@ -60,22 +62,10 @@ struct ContentView: View {
 		NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 	}
 
-	private func addProtoSource() {
-		withAnimation {
-			let newProtoSource = ProtoSource(source: protoSource, workDir: workDir)
-			modelContext.insert(newProtoSource)
-			// Clear input fields after adding
-			protoSource = ""
-			workDir = ""
-		}
-	}
-
 	private func deleteProtoSource(protoSource: ProtoSource) {
 		withAnimation {
 			modelContext.delete(protoSource)
 		}
-		// Assuming you have a method to commit changes; call it here if necessary.
-		// e.g., try? modelContext.save()
 	}
 
 	private func deleteProtoSources(offsets: IndexSet) {
