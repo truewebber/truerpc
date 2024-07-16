@@ -1,12 +1,11 @@
 import SwiftUI
-import AppKit
 import UniformTypeIdentifiers
 
 struct CustomFileInputField: View {
-	let title: String
+	var title: String
 	@Binding var text: String
-	let allowedContentTypes: [UTType]
-	let allowsDirectories: Bool
+	var allowedContentTypes: [UTType]
+	var allowsDirectories: Bool
 
 	var body: some View {
 		VStack(alignment: .leading, spacing: 4) {

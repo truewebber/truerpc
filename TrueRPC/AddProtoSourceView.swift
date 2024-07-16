@@ -6,10 +6,8 @@ struct AddProtoSourceView: View {
 	@Environment(\.modelContext) private var modelContext
 
 	@State private var protoSource: ProtoSource
-	@State private var isSelectingProtoSource = false
-	@State private var isSelectingWorkDir = false
-
-	private var isEditing: Bool
+	@State private var isEditing: Bool
+	@State private var validationError: String?
 
 	init(protoSource: ProtoSource? = nil) {
 		if let protoSource = protoSource {
@@ -34,6 +32,11 @@ struct AddProtoSourceView: View {
 				allowsDirectories: false
 			)
 
+			if let validationError = validationError {
+				Text(validationError)
+					.foregroundColor(.red)
+			}
+
 			CustomFileInputField(
 				title: "Working directory:",
 				text: $protoSource.workDir,
@@ -49,8 +52,12 @@ struct AddProtoSourceView: View {
 				}
 				Spacer()
 				Button("Save") {
-					saveProtoSource()
-					dismiss()
+					if protoSource.isValidProto() {
+						saveProtoSource()
+						dismiss()
+					} else {
+						validationError = "Invalid proto source. Please ensure it is a valid proto file."
+					}
 				}
 				.disabled(protoSource.source.isEmpty || protoSource.workDir.isEmpty)
 			}
