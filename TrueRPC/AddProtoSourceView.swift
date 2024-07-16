@@ -30,32 +30,16 @@ struct AddProtoSourceView: View {
 			CustomFileInputField(
 				title: "Proto Source:",
 				text: $protoSource.source,
-				action: { isSelectingProtoSource.toggle() }
-			)
-			.fileImporter(
-				isPresented: $isSelectingProtoSource,
 				allowedContentTypes: [.data],
-				allowsMultipleSelection: false
-			) { result in
-				if case .success(let urls) = result, let url = urls.first {
-					protoSource.source = url.path
-				}
-			}
+				allowsDirectories: false
+			)
 
 			CustomFileInputField(
 				title: "Working directory:",
 				text: $protoSource.workDir,
-				action: { isSelectingWorkDir.toggle() }
+				allowedContentTypes: [],
+				allowsDirectories: true
 			)
-			.fileImporter(
-				isPresented: $isSelectingWorkDir,
-				allowedContentTypes: [.folder],
-				allowsMultipleSelection: false
-			) { result in
-				if case .success(let urls) = result, let url = urls.first {
-					protoSource.workDir = url.path
-				}
-			}
 
 			Spacer().frame(height: 15)
 
