@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
 	@Environment(\.modelContext) private var modelContext
 	// main state
 	@Query private var protoSources: [ProtoSource]
@@ -88,6 +88,21 @@ struct ContentView: View {
 }
 
 #Preview {
-	ContentView()
-		.modelContainer(for: ProtoSource.self, inMemory: true)
+	do {
+		let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+		let container = try ModelContainer(for: ProtoSource.self, configurations: configuration)
+		let context = ModelContext(container)
+		let protoSources = [
+			ProtoSource(source: "Example Source 1", workDir: "/example/dir1"),
+			ProtoSource(source: "Example Source 2", workDir: "/example/dir2")
+		]
+
+		for protoSource in protoSources {
+			context.insert(protoSource)
+		}
+
+		return MainView().environment(\.modelContext, context)
+	} catch {
+		fatalError("Failed to create model container: \(error)")
+	}
 }
