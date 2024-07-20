@@ -28,7 +28,6 @@ struct AddProtoSourceView: View {
 			CustomFileInputField(
 				title: "Proto Source:",
 				text: $protoSource.source,
-				allowedContentTypes: [.data],
 				allowsDirectories: false
 			)
 
@@ -40,7 +39,6 @@ struct AddProtoSourceView: View {
 			CustomFileInputField(
 				title: "Working directory:",
 				text: $protoSource.workDir,
-				allowedContentTypes: [],
 				allowsDirectories: true
 			)
 

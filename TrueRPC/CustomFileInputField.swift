@@ -4,7 +4,6 @@ import UniformTypeIdentifiers
 struct CustomFileInputField: View {
 	var title: String
 	@Binding var text: String
-	var allowedContentTypes: [UTType]
 	var allowsDirectories: Bool
 
 	var body: some View {
@@ -29,14 +28,23 @@ struct CustomFileInputField: View {
 
 	private func openPanel() {
 		let panel = NSOpenPanel()
+
 		panel.allowsMultipleSelection = false
 		panel.canChooseDirectories = allowsDirectories
 		panel.canChooseFiles = !allowsDirectories
-		panel.allowedContentTypes = allowedContentTypes
+		panel.allowedContentTypes = getAllowedContentTypes(allowsDirectories: allowsDirectories)
 
 		if panel.runModal() == .OK {
 			text = panel.url?.path ?? ""
 		}
+	}
+	
+	private func getAllowedContentTypes(allowsDirectories: Bool) -> [UTType] {
+		if !allowsDirectories {
+			return [.data]
+		}
+		
+		return []
 	}
 }
 
@@ -44,7 +52,6 @@ struct CustomFileInputField: View {
 	CustomFileInputField(
 		title: "Sample Field",
 		text: .constant(""),
-		allowedContentTypes: [.plainText],
 		allowsDirectories: false
 	)
 	.padding()
