@@ -13,6 +13,18 @@
 		64A9049A2C4C3FA200085F88 /* protoc in Resources */ = {isa = PBXBuildFile; fileRef = 64A904982C4C3FA200085F88 /* protoc */; };
 		64A9049C2C4C803500085F88 /* AddProtoSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */; };
 		64A9049E2C4D32D900085F88 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9049D2C4D32D900085F88 /* TempFile.swift */; };
+		64A904BC2C4DC85800085F88 /* any.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A12C4DC6EA00085F88 /* any.proto */; };
+		64A904BD2C4DC85800085F88 /* api.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A22C4DC6EA00085F88 /* api.proto */; };
+		64A904BE2C4DC85800085F88 /* descriptor.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A32C4DC6EA00085F88 /* descriptor.proto */; };
+		64A904BF2C4DC85800085F88 /* duration.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A42C4DC6EA00085F88 /* duration.proto */; };
+		64A904C02C4DC85800085F88 /* empty.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A52C4DC6EA00085F88 /* empty.proto */; };
+		64A904C12C4DC85800085F88 /* field_mask.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A62C4DC6EA00085F88 /* field_mask.proto */; };
+		64A904C22C4DC85800085F88 /* source_context.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A72C4DC6EA00085F88 /* source_context.proto */; };
+		64A904C32C4DC85800085F88 /* struct.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A82C4DC6EA00085F88 /* struct.proto */; };
+		64A904C42C4DC85800085F88 /* timestamp.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A92C4DC6EA00085F88 /* timestamp.proto */; };
+		64A904C52C4DC85800085F88 /* type.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904AA2C4DC6EA00085F88 /* type.proto */; };
+		64A904C62C4DC85800085F88 /* wrappers.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904AB2C4DC6EA00085F88 /* wrappers.proto */; };
+		64A904C82C4DC93F00085F88 /* plugin.proto in Copy protobuf compiler libs */ = {isa = PBXBuildFile; fileRef = 64A9049F2C4DC6EA00085F88 /* plugin.proto */; };
 		64BF73E52BC0060C003220E4 /* TrueRPCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */; };
 		64BF73E72BC0060C003220E4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E62BC0060C003220E4 /* MainView.swift */; };
 		64BF73E92BC0060C003220E4 /* ProtoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* ProtoSource.swift */; };
@@ -40,12 +52,59 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		64A904BB2C4DC74500085F88 /* Copy protobuf libs */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/google/protobuf;
+			dstSubfolderSpec = 7;
+			files = (
+				64A904BC2C4DC85800085F88 /* any.proto in Copy protobuf libs */,
+				64A904BD2C4DC85800085F88 /* api.proto in Copy protobuf libs */,
+				64A904BE2C4DC85800085F88 /* descriptor.proto in Copy protobuf libs */,
+				64A904BF2C4DC85800085F88 /* duration.proto in Copy protobuf libs */,
+				64A904C02C4DC85800085F88 /* empty.proto in Copy protobuf libs */,
+				64A904C12C4DC85800085F88 /* field_mask.proto in Copy protobuf libs */,
+				64A904C22C4DC85800085F88 /* source_context.proto in Copy protobuf libs */,
+				64A904C32C4DC85800085F88 /* struct.proto in Copy protobuf libs */,
+				64A904C42C4DC85800085F88 /* timestamp.proto in Copy protobuf libs */,
+				64A904C52C4DC85800085F88 /* type.proto in Copy protobuf libs */,
+				64A904C62C4DC85800085F88 /* wrappers.proto in Copy protobuf libs */,
+			);
+			name = "Copy protobuf libs";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A904C72C4DC91600085F88 /* Copy protobuf compiler libs */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/google/protobuf/compiler;
+			dstSubfolderSpec = 7;
+			files = (
+				64A904C82C4DC93F00085F88 /* plugin.proto in Copy protobuf compiler libs */,
+			);
+			name = "Copy protobuf compiler libs";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
 		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		64A904982C4C3FA200085F88 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
 		64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceController.swift; sourceTree = "<group>"; };
 		64A9049D2C4D32D900085F88 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
+		64A9049F2C4DC6EA00085F88 /* plugin.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = plugin.proto; sourceTree = "<group>"; };
+		64A904A12C4DC6EA00085F88 /* any.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = any.proto; sourceTree = "<group>"; };
+		64A904A22C4DC6EA00085F88 /* api.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = api.proto; sourceTree = "<group>"; };
+		64A904A32C4DC6EA00085F88 /* descriptor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = descriptor.proto; sourceTree = "<group>"; };
+		64A904A42C4DC6EA00085F88 /* duration.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = duration.proto; sourceTree = "<group>"; };
+		64A904A52C4DC6EA00085F88 /* empty.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = empty.proto; sourceTree = "<group>"; };
+		64A904A62C4DC6EA00085F88 /* field_mask.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = field_mask.proto; sourceTree = "<group>"; };
+		64A904A72C4DC6EA00085F88 /* source_context.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = source_context.proto; sourceTree = "<group>"; };
+		64A904A82C4DC6EA00085F88 /* struct.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = struct.proto; sourceTree = "<group>"; };
+		64A904A92C4DC6EA00085F88 /* timestamp.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = timestamp.proto; sourceTree = "<group>"; };
+		64A904AA2C4DC6EA00085F88 /* type.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = type.proto; sourceTree = "<group>"; };
+		64A904AB2C4DC6EA00085F88 /* wrappers.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = wrappers.proto; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
 		64BF73E62BC0060C003220E4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -89,6 +148,7 @@
 		64A904802C4BEE7C00085F88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				64A904AE2C4DC6EA00085F88 /* include */,
 				64A904992C4C3FA200085F88 /* bin */,
 			);
 			path = Resources;
@@ -100,6 +160,49 @@
 				64A904982C4C3FA200085F88 /* protoc */,
 			);
 			path = bin;
+			sourceTree = "<group>";
+		};
+		64A904A02C4DC6EA00085F88 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				64A9049F2C4DC6EA00085F88 /* plugin.proto */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		64A904AC2C4DC6EA00085F88 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				64A904A02C4DC6EA00085F88 /* compiler */,
+				64A904A12C4DC6EA00085F88 /* any.proto */,
+				64A904A22C4DC6EA00085F88 /* api.proto */,
+				64A904A32C4DC6EA00085F88 /* descriptor.proto */,
+				64A904A42C4DC6EA00085F88 /* duration.proto */,
+				64A904A52C4DC6EA00085F88 /* empty.proto */,
+				64A904A62C4DC6EA00085F88 /* field_mask.proto */,
+				64A904A72C4DC6EA00085F88 /* source_context.proto */,
+				64A904A82C4DC6EA00085F88 /* struct.proto */,
+				64A904A92C4DC6EA00085F88 /* timestamp.proto */,
+				64A904AA2C4DC6EA00085F88 /* type.proto */,
+				64A904AB2C4DC6EA00085F88 /* wrappers.proto */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		64A904AD2C4DC6EA00085F88 /* google */ = {
+			isa = PBXGroup;
+			children = (
+				64A904AC2C4DC6EA00085F88 /* protobuf */,
+			);
+			path = google;
+			sourceTree = "<group>";
+		};
+		64A904AE2C4DC6EA00085F88 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				64A904AD2C4DC6EA00085F88 /* google */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		64BF73D82BC0060C003220E4 = {
@@ -175,6 +278,8 @@
 				64BF73DD2BC0060C003220E4 /* Sources */,
 				64BF73DE2BC0060C003220E4 /* Frameworks */,
 				64BF73DF2BC0060C003220E4 /* Resources */,
+				64A904BB2C4DC74500085F88 /* Copy protobuf libs */,
+				64A904C72C4DC91600085F88 /* Copy protobuf compiler libs */,
 			);
 			buildRules = (
 			);
