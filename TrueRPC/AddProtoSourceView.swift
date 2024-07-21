@@ -4,41 +4,32 @@ import SwiftData
 struct AddProtoSourceView: View {
 	@Environment(\.dismiss) private var dismiss
 	@Environment(\.modelContext) private var modelContext
+	@StateObject private var controller: AddProtoSourceController
 
-	@State private var protoSource: ProtoSource
-	@State private var isEditing: Bool
-	@State private var validationError: String?
-
-	init(protoSource: ProtoSource? = nil) {
-		if let protoSource = protoSource {
-			self._protoSource = State(initialValue: protoSource)
-			self.isEditing = true
-		} else {
-			self._protoSource = State(initialValue: ProtoSource(source: "", workDir: ""))
-			self.isEditing = false
-		}
+	init(protoSource: ProtoSource? = nil, modelContext: ModelContext) {
+		_controller = StateObject(wrappedValue: AddProtoSourceController(modelContext: modelContext, source: protoSource))
 	}
 
 	var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Text(isEditing ? "Edit Proto Source" : "Add New Proto Source")
+			Text(controller.isEditing ? "Edit Proto Source" : "Add New Proto Source")
 				.font(.headline)
 				.padding(.top, 10)
-
+			
 			CustomFileInputField(
 				title: "Proto Source:",
-				text: $protoSource.source,
+				text: $controller.protoSource.source,
 				allowsDirectories: false
 			)
 
-			if let validationError = validationError {
+			if let validationError = controller.validationError {
 				Text(validationError)
 					.foregroundColor(.red)
 			}
 
 			CustomFileInputField(
 				title: "Working directory:",
-				text: $protoSource.workDir,
+				text: $controller.protoSource.workDir,
 				allowsDirectories: true
 			)
 
@@ -50,25 +41,17 @@ struct AddProtoSourceView: View {
 				}
 				Spacer()
 				Button("Save") {
-					if protoSource.isValidProto() {
-						saveProtoSource()
+					if controller.validate() {
+						controller.saveProtoSource()
 						dismiss()
-					} else {
-						validationError = "Invalid proto source. Please ensure it is a valid proto file."
 					}
 				}
-				.disabled(protoSource.source.isEmpty || protoSource.workDir.isEmpty)
+				.disabled(controller.protoSource.source.isEmpty || controller.protoSource.workDir.isEmpty)
 			}
 		}
 		.padding()
 		.frame(minWidth: 500, idealWidth: 600, maxWidth: .infinity, minHeight: 150, idealHeight: 250, maxHeight: .infinity)
 		.background(Color(.windowBackgroundColor))
-	}
-
-	private func saveProtoSource() {
-		if !isEditing {
-			modelContext.insert(protoSource)
-		}
 	}
 }
 
@@ -80,7 +63,7 @@ struct AddProtoSourceView: View {
 		let sampleProtoSource = ProtoSource(source: "/path/to/sample.proto", workDir: "/path/to/work/dir")
 		container.mainContext.insert(sampleProtoSource)
 
-		return AddProtoSourceView(protoSource: sampleProtoSource)
+		return AddProtoSourceView(protoSource: sampleProtoSource, modelContext: container.mainContext)
 			.modelContainer(container)
 	} catch {
 		return Text("Failed to create preview: \(error.localizedDescription)")

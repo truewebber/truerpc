@@ -3,9 +3,7 @@ import SwiftUI
 
 struct MainView: View {
 	@Environment(\.modelContext) private var modelContext
-	// main state
 	@Query private var protoSources: [ProtoSource]
-	// add proto source state
 	@State private var isShowingModal = false
 	@State private var selectedProtoSource: ProtoSource?
 
@@ -49,11 +47,7 @@ struct MainView: View {
 				}
 			}
 			.sheet(isPresented: $isShowingModal) {
-				if let protoSource = selectedProtoSource {
-					AddProtoSourceView(protoSource: protoSource)
-				} else {
-					AddProtoSourceView()
-				}
+				AddProtoSourceView(protoSource: selectedProtoSource, modelContext: modelContext)
 			}
 		}
 	}
@@ -61,28 +55,20 @@ struct MainView: View {
 	private func toggleSidebar() {
 		NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 	}
-	
+
 	private func addNewProtoSource() {
-		isShowingModal = true
 		selectedProtoSource = nil
-	}
-	
-	private func editNewProtoSource(protoSource: ProtoSource) {
 		isShowingModal = true
+	}
+
+	private func editNewProtoSource(protoSource: ProtoSource) {		
 		selectedProtoSource = protoSource
+		isShowingModal = true
 	}
 
 	private func deleteProtoSource(protoSource: ProtoSource) {
 		withAnimation {
 			modelContext.delete(protoSource)
-		}
-	}
-
-	private func deleteProtoSources(offsets: IndexSet) {
-		withAnimation {
-			for index in offsets {
-				modelContext.delete(protoSources[index])
-			}
 		}
 	}
 }
