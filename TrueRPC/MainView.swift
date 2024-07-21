@@ -4,8 +4,7 @@ import SwiftUI
 struct MainView: View {
 	@Environment(\.modelContext) private var modelContext
 	@Query private var protoSources: [ProtoSource]
-	@State private var isShowingModal = false
-	@State private var selectedProtoSource: ProtoSource?
+	@State private var selectedProtoSource: ProtoSource? = nil
 
 	var body: some View {
 		NavigationView {
@@ -46,8 +45,8 @@ struct MainView: View {
 					}
 				}
 			}
-			.sheet(isPresented: $isShowingModal) {
-				AddProtoSourceView(protoSource: selectedProtoSource, modelContext: modelContext)
+			.sheet(item: $selectedProtoSource) { protoSource in
+				AddProtoSourceView(protoSource: protoSource, modelContext: modelContext)
 			}
 		}
 	}
@@ -57,13 +56,11 @@ struct MainView: View {
 	}
 
 	private func addNewProtoSource() {
-		selectedProtoSource = nil
-		isShowingModal = true
+		selectedProtoSource = ProtoSource(source: "", workDir: "")
 	}
 
-	private func editNewProtoSource(protoSource: ProtoSource) {		
+	private func editNewProtoSource(protoSource: ProtoSource) {
 		selectedProtoSource = protoSource
-		isShowingModal = true
 	}
 
 	private func deleteProtoSource(protoSource: ProtoSource) {

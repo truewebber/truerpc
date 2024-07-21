@@ -8,15 +8,10 @@ class AddProtoSourceController: ObservableObject {
 
 	private var modelContext: ModelContext
 
-	init(modelContext: ModelContext, source: ProtoSource? = nil) {
+	init(modelContext: ModelContext, protoSource: ProtoSource) {
 		self.modelContext = modelContext
-		if source != nil {
-			self.protoSource = source!
-			self.isEditing = true
-		} else {
-			self.protoSource = ProtoSource(source: "", workDir: "")
-			self.isEditing = false
-		}
+		self.protoSource = protoSource
+		self.isEditing = !protoSource.source.isEmpty || !protoSource.workDir.isEmpty
 	}
 
 	func saveProtoSource() {
@@ -24,14 +19,6 @@ class AddProtoSourceController: ObservableObject {
 			modelContext.insert(protoSource)
 		}
 	}
-	
-//	private func isValidProto(source: String) -> Bool {
-//		guard let fileContent = try? String(contentsOfFile: source, encoding: .utf8) else {
-//			return false
-//		}
-//		
-//		return fileContent.contains("syntax = \"proto") && fileContent.contains("message")
-//	}
 
 	func validate() -> Bool {
 		if isValidProto() {

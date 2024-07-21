@@ -6,8 +6,8 @@ struct AddProtoSourceView: View {
 	@Environment(\.modelContext) private var modelContext
 	@StateObject private var controller: AddProtoSourceController
 
-	init(protoSource: ProtoSource? = nil, modelContext: ModelContext) {
-		_controller = StateObject(wrappedValue: AddProtoSourceController(modelContext: modelContext, source: protoSource))
+	init(protoSource: ProtoSource, modelContext: ModelContext) {
+		_controller = StateObject(wrappedValue: AddProtoSourceController(modelContext: modelContext, protoSource: protoSource))
 	}
 
 	var body: some View {
@@ -15,7 +15,7 @@ struct AddProtoSourceView: View {
 			Text(controller.isEditing ? "Edit Proto Source" : "Add New Proto Source")
 				.font(.headline)
 				.padding(.top, 10)
-			
+
 			CustomFileInputField(
 				title: "Proto Source:",
 				text: $controller.protoSource.source,
