@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-	@StateObject private var viewModel = FileListViewModel(fileManager: CustomFileManager())
+	@StateObject private var viewModel = FileListViewModel()
 	
 	var body: some View {
 		NavigationView {
-			FileManagementModule.makeFileListView()
-			FileManagementModule.makeFileContentView(viewModel: viewModel)
+			FileListView(viewModel: viewModel)
+			FileContentView(viewModel: viewModel)
 		}
 	}
 }

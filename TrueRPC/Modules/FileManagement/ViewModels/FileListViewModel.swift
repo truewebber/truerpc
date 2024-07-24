@@ -19,6 +19,7 @@ class FileListViewModel: ObservableObject {
 		if panel.runModal() == .OK {
 			if let url = panel.urls.first {
 				fileManager.addFile(url: url)
+				objectWillChange.send()  // Notify observers of change
 			}
 		}
 	}
@@ -28,6 +29,17 @@ class FileListViewModel: ObservableObject {
 		if selectedFile != nil && !fileManager.files.contains(where: { $0.id == selectedFile!.id }) {
 			selectedFile = nil
 			fileContent = ""
+		}
+	}
+	
+	func deleteFile(_ file: CustomFile) {
+		if let index = fileManager.files.firstIndex(where: { $0.id == file.id }) {
+			fileManager.removeFiles(at: IndexSet(integer: index))
+			objectWillChange.send()
+			if selectedFile?.id == file.id {
+				selectedFile = nil
+				fileContent = ""
+			}
 		}
 	}
 	

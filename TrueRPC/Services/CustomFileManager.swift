@@ -2,7 +2,7 @@ import Foundation
 
 class CustomFileManager: ObservableObject {
 	@Published var files: [CustomFile] = []
-	
+
 	init() {
 		loadFiles()
 	}

@@ -9,8 +9,14 @@ struct FileListView: View {
 				FileRowView(file: file) {
 					viewModel.loadFileContent(file)
 				}
+				.swipeActions(edge: .trailing, allowsFullSwipe: true) {
+					Button(role: .destructive) {
+						viewModel.deleteFile(file)
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				}
 			}
-			.onDelete(perform: viewModel.deleteFiles)
 		}
 		.listStyle(SidebarListStyle())
 		.frame(minWidth: 200)
