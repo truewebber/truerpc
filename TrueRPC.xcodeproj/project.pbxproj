@@ -31,6 +31,8 @@
 		64A905002C50557600085F88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904FF2C50557600085F88 /* ContentView.swift */; };
 		64A905022C50560200085F88 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A905012C50560200085F88 /* App.swift */; };
 		64A905052C50583400085F88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A905042C50583400085F88 /* Preview Assets.xcassets */; };
+		64A905062C51962900085F88 /* ProtoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73E82BC0060C003220E4 /* ProtoSource.swift */; };
+		64A905082C51985C00085F88 /* ProtoSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A905072C51985C00085F88 /* ProtoSourceManager.swift */; };
 		64BF73EB2BC0060D003220E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64BF73EA2BC0060D003220E4 /* Assets.xcassets */; };
 		64BF73F92BC0060D003220E4 /* TrueRPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF73F82BC0060D003220E4 /* TrueRPCTests.swift */; };
 		64BF74032BC0060D003220E4 /* TrueRPCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BF74022BC0060D003220E4 /* TrueRPCUITests.swift */; };
@@ -117,6 +119,7 @@
 		64A904FF2C50557600085F88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64A905012C50560200085F88 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		64A905042C50583400085F88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		64A905072C51985C00085F88 /* ProtoSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceManager.swift; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
 		64BF73E62BC0060C003220E4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -228,6 +231,7 @@
 		64A904E72C504F3C00085F88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				64BF73E82BC0060C003220E4 /* ProtoSource.swift */,
 				64A904FA2C5053BA00085F88 /* CustomFile.swift */,
 			);
 			path = Models;
@@ -237,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				64A904FC2C5054FB00085F88 /* CustomFileManager.swift */,
+				64A905072C51985C00085F88 /* ProtoSourceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,7 +286,6 @@
 			children = (
 				64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */,
 				64BF73E62BC0060C003220E4 /* MainView.swift */,
-				64BF73E82BC0060C003220E4 /* ProtoSource.swift */,
 				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
 				647FDF042C40603C00E19112 /* AddProtoSourceView.swift */,
 				64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */,
@@ -494,8 +498,10 @@
 				64A904F62C50535300085F88 /* FileContentView.swift in Sources */,
 				64A904FD2C5054FB00085F88 /* CustomFileManager.swift in Sources */,
 				64A904F82C50535300085F88 /* FileRowView.swift in Sources */,
+				64A905062C51962900085F88 /* ProtoSource.swift in Sources */,
 				64A905022C50560200085F88 /* App.swift in Sources */,
 				64A904F72C50535300085F88 /* FileListView.swift in Sources */,
+				64A905082C51985C00085F88 /* ProtoSourceManager.swift in Sources */,
 				64A904F92C50535300085F88 /* FileManagementModule.swift in Sources */,
 				64A904F52C50535300085F88 /* FileListViewModel.swift in Sources */,
 				64A904FB2C5053BA00085F88 /* CustomFile.swift in Sources */,
