@@ -14,8 +14,4 @@ class ProtoSource: Identifiable {
 		self.sourceFile = sourceFile
 		self.workDir = workDir
 	}
-
-//	func setSourceFileBookmarkData(data: Data) {
-//		self.sourceFileBookmarkData = data
-//	}
 }

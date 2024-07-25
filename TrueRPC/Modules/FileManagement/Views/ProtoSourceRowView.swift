@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct FileRowView: View {
-	let file: CustomFile
+struct ProtoSourceRowView: View {
+	let protoSource: ProtoSource
 	let action: () -> Void
-	
+
 	var body: some View {
-		Text(file.name)
+		Text(protoSource.sourceFile)
 			.onTapGesture(perform: action)
 	}
 }

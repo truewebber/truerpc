@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-	@StateObject private var viewModel = FileListViewModel()
+	@StateObject private var viewModel = ProtoSourceListViewModel()
 	
 	var body: some View {
 		NavigationView {
-			FileListView(viewModel: viewModel)
-			FileContentView(viewModel: viewModel)
+			ProtoSourceListView(viewModel: viewModel)
+			ProtoSourceContentView(viewModel: viewModel)
 		}
 	}
 }

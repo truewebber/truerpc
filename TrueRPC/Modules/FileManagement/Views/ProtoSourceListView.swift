@@ -1,17 +1,17 @@
 import SwiftUI
 
-struct FileListView: View {
-	@ObservedObject var viewModel: FileListViewModel
+struct ProtoSourceListView: View {
+	@ObservedObject var viewModel: ProtoSourceListViewModel
 	
 	var body: some View {
 		List {
-			ForEach(viewModel.fileManager.files) { file in
-				FileRowView(file: file) {
-					viewModel.loadFileContent(file)
+			ForEach(viewModel.manager.sources) { protoSource in
+				ProtoSourceRowView(protoSource: protoSource) {
+					viewModel.readProtoContent(protoSource)
 				}
 				.swipeActions(edge: .trailing, allowsFullSwipe: true) {
 					Button(role: .destructive) {
-						viewModel.deleteFile(file)
+						viewModel.deleteProtoSource(protoSource)
 					} label: {
 						Label("Delete", systemImage: "trash")
 					}
@@ -21,7 +21,7 @@ struct FileListView: View {
 		.listStyle(SidebarListStyle())
 		.frame(minWidth: 200)
 		.toolbar {
-			Button(action: viewModel.addFile) {
+			Button(action: viewModel.addProtoSource) {
 				Label("Add File", systemImage: "plus")
 			}
 		}

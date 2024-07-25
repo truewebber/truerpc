@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */; };
+		6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */; };
+		6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */; };
+		6487AE6D2C52C58F000D1ED0 /* ProtoSourceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */; };
+		6487AE6F2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6E2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift */; };
 		64A9048A2C4BF19A00085F88 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 64A904892C4BF19A00085F88 /* SwiftProtobuf */; };
 		64A9049A2C4C3FA200085F88 /* protoc in Resources */ = {isa = PBXBuildFile; fileRef = 64A904982C4C3FA200085F88 /* protoc */; };
 		64A904BC2C4DC85800085F88 /* any.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904A12C4DC6EA00085F88 /* any.proto */; };
@@ -21,13 +26,6 @@
 		64A904C52C4DC85800085F88 /* type.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904AA2C4DC6EA00085F88 /* type.proto */; };
 		64A904C62C4DC85800085F88 /* wrappers.proto in Copy protobuf libs */ = {isa = PBXBuildFile; fileRef = 64A904AB2C4DC6EA00085F88 /* wrappers.proto */; };
 		64A904C82C4DC93F00085F88 /* plugin.proto in Copy protobuf compiler libs */ = {isa = PBXBuildFile; fileRef = 64A9049F2C4DC6EA00085F88 /* plugin.proto */; };
-		64A904F52C50535300085F88 /* FileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904ED2C50535300085F88 /* FileListViewModel.swift */; };
-		64A904F62C50535300085F88 /* FileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904EF2C50535300085F88 /* FileContentView.swift */; };
-		64A904F72C50535300085F88 /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904F02C50535300085F88 /* FileListView.swift */; };
-		64A904F82C50535300085F88 /* FileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904F12C50535300085F88 /* FileRowView.swift */; };
-		64A904F92C50535300085F88 /* FileManagementModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904F32C50535300085F88 /* FileManagementModule.swift */; };
-		64A904FB2C5053BA00085F88 /* CustomFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904FA2C5053BA00085F88 /* CustomFile.swift */; };
-		64A904FD2C5054FB00085F88 /* CustomFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904FC2C5054FB00085F88 /* CustomFileManager.swift */; };
 		64A905002C50557600085F88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A904FF2C50557600085F88 /* ContentView.swift */; };
 		64A905022C50560200085F88 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A905012C50560200085F88 /* App.swift */; };
 		64A905052C50583400085F88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A905042C50583400085F88 /* Preview Assets.xcassets */; };
@@ -94,9 +92,13 @@
 /* Begin PBXFileReference section */
 		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
 		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
+		6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListViewModel.swift; sourceTree = "<group>"; };
+		6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceContentView.swift; sourceTree = "<group>"; };
+		6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListView.swift; sourceTree = "<group>"; };
+		6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceRowView.swift; sourceTree = "<group>"; };
+		6487AE6E2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceManagementModule.swift; sourceTree = "<group>"; };
 		64A904982C4C3FA200085F88 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
 		64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceController.swift; sourceTree = "<group>"; };
-		64A9049D2C4D32D900085F88 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
 		64A9049F2C4DC6EA00085F88 /* plugin.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = plugin.proto; sourceTree = "<group>"; };
 		64A904A12C4DC6EA00085F88 /* any.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = any.proto; sourceTree = "<group>"; };
 		64A904A22C4DC6EA00085F88 /* api.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = api.proto; sourceTree = "<group>"; };
@@ -109,19 +111,11 @@
 		64A904A92C4DC6EA00085F88 /* timestamp.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = timestamp.proto; sourceTree = "<group>"; };
 		64A904AA2C4DC6EA00085F88 /* type.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = type.proto; sourceTree = "<group>"; };
 		64A904AB2C4DC6EA00085F88 /* wrappers.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = wrappers.proto; sourceTree = "<group>"; };
-		64A904ED2C50535300085F88 /* FileListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewModel.swift; sourceTree = "<group>"; };
-		64A904EF2C50535300085F88 /* FileContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContentView.swift; sourceTree = "<group>"; };
-		64A904F02C50535300085F88 /* FileListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
-		64A904F12C50535300085F88 /* FileRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRowView.swift; sourceTree = "<group>"; };
-		64A904F32C50535300085F88 /* FileManagementModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagementModule.swift; sourceTree = "<group>"; };
-		64A904FA2C5053BA00085F88 /* CustomFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFile.swift; sourceTree = "<group>"; };
-		64A904FC2C5054FB00085F88 /* CustomFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileManager.swift; sourceTree = "<group>"; };
 		64A904FF2C50557600085F88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64A905012C50560200085F88 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		64A905042C50583400085F88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64A905072C51985C00085F88 /* ProtoSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceManager.swift; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueRPCApp.swift; sourceTree = "<group>"; };
 		64BF73E62BC0060C003220E4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		64BF73E82BC0060C003220E4 /* ProtoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSource.swift; sourceTree = "<group>"; };
 		64BF73EA2BC0060D003220E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				64BF73E82BC0060C003220E4 /* ProtoSource.swift */,
-				64A904FA2C5053BA00085F88 /* CustomFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,7 +233,6 @@
 		64A904E82C504F4700085F88 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				64A904FC2C5054FB00085F88 /* CustomFileManager.swift */,
 				64A905072C51985C00085F88 /* ProtoSourceManager.swift */,
 			);
 			path = Services;
@@ -256,7 +248,7 @@
 		64A904EE2C50535300085F88 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				64A904ED2C50535300085F88 /* FileListViewModel.swift */,
+				6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,9 +256,9 @@
 		64A904F22C50535300085F88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				64A904EF2C50535300085F88 /* FileContentView.swift */,
-				64A904F02C50535300085F88 /* FileListView.swift */,
-				64A904F12C50535300085F88 /* FileRowView.swift */,
+				6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */,
+				6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */,
+				6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,7 +268,7 @@
 			children = (
 				64A904EE2C50535300085F88 /* ViewModels */,
 				64A904F22C50535300085F88 /* Views */,
-				64A904F32C50535300085F88 /* FileManagementModule.swift */,
+				6487AE6E2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift */,
 			);
 			path = FileManagement;
 			sourceTree = "<group>";
@@ -284,12 +276,10 @@
 		64A904FE2C50555B00085F88 /* OLD */ = {
 			isa = PBXGroup;
 			children = (
-				64BF73E42BC0060C003220E4 /* TrueRPCApp.swift */,
 				64BF73E62BC0060C003220E4 /* MainView.swift */,
 				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
 				647FDF042C40603C00E19112 /* AddProtoSourceView.swift */,
 				64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */,
-				64A9049D2C4D32D900085F88 /* TempFile.swift */,
 			);
 			path = OLD;
 			sourceTree = "<group>";
@@ -495,16 +485,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A904F62C50535300085F88 /* FileContentView.swift in Sources */,
-				64A904FD2C5054FB00085F88 /* CustomFileManager.swift in Sources */,
-				64A904F82C50535300085F88 /* FileRowView.swift in Sources */,
+				6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */,
 				64A905062C51962900085F88 /* ProtoSource.swift in Sources */,
 				64A905022C50560200085F88 /* App.swift in Sources */,
-				64A904F72C50535300085F88 /* FileListView.swift in Sources */,
+				6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */,
 				64A905082C51985C00085F88 /* ProtoSourceManager.swift in Sources */,
-				64A904F92C50535300085F88 /* FileManagementModule.swift in Sources */,
-				64A904F52C50535300085F88 /* FileListViewModel.swift in Sources */,
-				64A904FB2C5053BA00085F88 /* CustomFile.swift in Sources */,
+				6487AE6D2C52C58F000D1ED0 /* ProtoSourceRowView.swift in Sources */,
+				6487AE6F2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift in Sources */,
+				6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */,
 				64A905002C50557600085F88 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

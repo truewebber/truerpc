@@ -10,7 +10,7 @@ class ProtoSourceManager: ObservableObject {
 	func addProtoSource(protoSource: ProtoSource) {
 		do {
 			let sourceFileURL = URL(fileURLWithPath: protoSource.sourceFile)
-			var sourceFileBookmarkData = try sourceFileURL.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
+			let sourceFileBookmarkData = try sourceFileURL.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
 
 			protoSource.sourceFileBookmarkData = sourceFileBookmarkData
 
@@ -21,7 +21,7 @@ class ProtoSourceManager: ObservableObject {
 		}
 	}
 
-	func removeFiles(at offsets: IndexSet) {
+	func removeProtoSources(at offsets: IndexSet) {
 		sources.remove(atOffsets: offsets)
 		saveProtoSources()
 	}
@@ -94,22 +94,25 @@ class ProtoSourceManager: ObservableObject {
 		sources = protoData.compactMap { fileInfo in
 			guard let uuidString = fileInfo["uuid"] as? String,
 				  let sourceFile = fileInfo["sourceFile"] as? String,
-				  let workDir = fileInfo["workDir"] as? String else { return nil }
-
-			guard let sourceFileBookmarkData = fileInfo["sourceFileBookmarkData"] as? Data,
-				  let workDirBookmarkData = fileInfo["workDirBookmarkData"] as? Data else { return nil }
+				  let workDir = fileInfo["workDir"] as? String else {
+				return nil
+			}
 
 			let source = ProtoSource(
 				id: UUID(uuidString: uuidString)!,
 				sourceFile: sourceFile,
 				workDir: workDir
 			)
-			
-			source.sourceFileBookmarkData = sourceFileBookmarkData
-			source.workDirBookmarkData = workDirBookmarkData
-			
+
+			if let sourceFileBookmarkData = fileInfo["sourceFileBookmarkData"] as? Data {
+				source.sourceFileBookmarkData = sourceFileBookmarkData
+			}
+
+			if let workDirBookmarkData = fileInfo["workDirBookmarkData"] as? Data {
+				source.workDirBookmarkData = workDirBookmarkData
+			}
+
 			return source
 		}
 	}
 }
-
