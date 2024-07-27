@@ -10,3 +10,7 @@ struct ContentView: View {
 		}
 	}
 }
+
+#Preview {
+	return ContentView()
+}

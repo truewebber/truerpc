@@ -9,3 +9,9 @@ struct ProtoSourceRowView: View {
 			.onTapGesture(perform: action)
 	}
 }
+
+#Preview {
+	let protoSource = ProtoSource(id:UUID(), sourceFile: "file", workDir: "dir")
+
+	return ProtoSourceRowView(protoSource: protoSource, action: {})
+}

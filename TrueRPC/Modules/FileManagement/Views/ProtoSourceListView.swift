@@ -27,3 +27,15 @@ struct ProtoSourceListView: View {
 		}
 	}
 }
+
+#Preview {
+	let viewModel = ProtoSourceListViewModel()
+	viewModel.manager.sources = [
+		ProtoSource(id: UUID(), sourceFile: "file1", workDir: ""),
+		ProtoSource(id: UUID(), sourceFile: "file2", workDir: ""),
+		ProtoSource(id: UUID(), sourceFile: "file3", workDir: ""),
+		ProtoSource(id: UUID(), sourceFile: "file4", workDir: "")
+	]
+
+	return ProtoSourceListView(viewModel: viewModel)
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4622C559EA800A4B6E9 /* TempFile.swift */; };
 		6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */; };
 		6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */; };
 		6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		645FC4622C559EA800A4B6E9 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
 		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
 		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				64BF73E82BC0060C003220E4 /* ProtoSource.swift */,
+				645FC4622C559EA800A4B6E9 /* TempFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				6487AE6F2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift in Sources */,
 				6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */,
 				64A905002C50557600085F88 /* ContentView.swift in Sources */,
+				645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

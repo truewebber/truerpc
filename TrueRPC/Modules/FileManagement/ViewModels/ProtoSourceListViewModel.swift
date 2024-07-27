@@ -1,10 +1,11 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import SwiftProtobuf
 
 class ProtoSourceListViewModel: ObservableObject {
 	@Published var manager: ProtoSourceManager
 	@Published var selectedProtoSource: ProtoSource?
-	@Published var protoContent: String = ""
+	@Published var protoContent: Google_Protobuf_FileDescriptorSet?
 	@Published var errorMessage: String?
 
 	init(manager: ProtoSourceManager = ProtoSourceManager()) {
@@ -30,7 +31,7 @@ class ProtoSourceListViewModel: ObservableObject {
 		manager.removeProtoSources(at: offsets)
 		if selectedProtoSource != nil && !manager.sources.contains(where: { $0.id == selectedProtoSource!.id }) {
 			selectedProtoSource = nil
-			protoContent = ""
+			protoContent = nil
 		}
 	}
 	
@@ -40,21 +41,21 @@ class ProtoSourceListViewModel: ObservableObject {
 			objectWillChange.send()
 			if selectedProtoSource?.id == protoSource.id {
 				selectedProtoSource = nil
-				protoContent = ""
+				protoContent = nil
 			}
 		}
 	}
 	
 	func readProtoContent(_ protoSource: ProtoSource) {
 		do {
-			let content = try manager.readProtoContent(protoSource)
+			let content = try manager.getProtoDiscriptors(protoSource)
 			protoContent = content
 			selectedProtoSource = protoSource
 			errorMessage = nil
 		} catch {
 			print("Error reading file: \(error)")
 			errorMessage = "Error loading file content: \(error.localizedDescription)"
-			protoContent = ""
+			protoContent = nil
 			selectedProtoSource = nil
 		}
 	}
