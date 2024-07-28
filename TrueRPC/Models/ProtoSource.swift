@@ -9,7 +9,7 @@ class ProtoSource: Identifiable {
 	var sourceFileBookmarkData: Data?
 	var workDirBookmarkData: Data?
 	
-	init(id: UUID, sourceFile: String, workDir: String) {
+	init(id: UUID = UUID(), sourceFile: String, workDir: String) {
 		self.id = id
 		self.sourceFile = sourceFile
 		self.workDir = workDir

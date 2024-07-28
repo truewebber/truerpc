@@ -11,6 +11,7 @@
 		645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */; };
 		645FC4672C5681D100A4B6E9 /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4662C5681D100A4B6E9 /* FileError.swift */; };
 		645FC4682C5692DD00A4B6E9 /* CustomFileInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647FDF022C405DBC00E19112 /* CustomFileInputField.swift */; };
+		645FC46A2C5699B600A4B6E9 /* AddProtoSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4692C5699B600A4B6E9 /* AddProtoSourceView.swift */; };
 		6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */; };
 		6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */; };
 		6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */; };
@@ -97,6 +98,7 @@
 		645FC4622C559EA800A4B6E9 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
 		645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoParseError.swift; sourceTree = "<group>"; };
 		645FC4662C5681D100A4B6E9 /* FileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileError.swift; sourceTree = "<group>"; };
+		645FC4692C5699B600A4B6E9 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
 		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListViewModel.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */,
 				6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */,
 				6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */,
+				645FC4692C5699B600A4B6E9 /* AddProtoSourceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				64A905022C50560200085F88 /* App.swift in Sources */,
 				645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */,
 				6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */,
+				645FC46A2C5699B600A4B6E9 /* AddProtoSourceView.swift in Sources */,
 				64A905082C51985C00085F88 /* ProtoSourceManager.swift in Sources */,
 				6487AE6D2C52C58F000D1ED0 /* ProtoSourceRowView.swift in Sources */,
 				6487AE6F2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift in Sources */,
