@@ -10,6 +10,7 @@
 		645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4622C559EA800A4B6E9 /* TempFile.swift */; };
 		645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */; };
 		645FC4672C5681D100A4B6E9 /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4662C5681D100A4B6E9 /* FileError.swift */; };
+		645FC4682C5692DD00A4B6E9 /* CustomFileInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647FDF022C405DBC00E19112 /* CustomFileInputField.swift */; };
 		6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */; };
 		6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */; };
 		6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */; };
@@ -223,7 +224,7 @@
 		64A904E62C504F2000085F88 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				64A904F42C50535300085F88 /* FileManagement */,
+				64A904F42C50535300085F88 /* ProtoSourceManagement */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -272,22 +273,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		64A904F42C50535300085F88 /* FileManagement */ = {
+		64A904F42C50535300085F88 /* ProtoSourceManagement */ = {
 			isa = PBXGroup;
 			children = (
 				64A904EE2C50535300085F88 /* ViewModels */,
 				64A904F22C50535300085F88 /* Views */,
 				6487AE6E2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift */,
 			);
-			path = FileManagement;
+			path = ProtoSourceManagement;
 			sourceTree = "<group>";
 		};
 		64A904FE2C50555B00085F88 /* OLD */ = {
 			isa = PBXGroup;
 			children = (
 				64BF73E62BC0060C003220E4 /* MainView.swift */,
-				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
 				647FDF042C40603C00E19112 /* AddProtoSourceView.swift */,
+				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
 				64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */,
 			);
 			path = OLD;
@@ -495,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */,
+				645FC4682C5692DD00A4B6E9 /* CustomFileInputField.swift in Sources */,
 				64A905062C51962900085F88 /* ProtoSource.swift in Sources */,
 				64A905022C50560200085F88 /* App.swift in Sources */,
 				645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */,

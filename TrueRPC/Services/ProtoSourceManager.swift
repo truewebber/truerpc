@@ -122,7 +122,7 @@ class ProtoSourceManager: ObservableObject {
 		}
 
 		if isStale {
-			print("Warning: Bookmark is stale")
+			generalLog.warning("Bookmark is stale")
 		}
 
 		guard url.startAccessingSecurityScopedResource() else {

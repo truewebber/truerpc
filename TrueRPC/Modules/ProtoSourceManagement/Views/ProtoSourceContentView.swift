@@ -43,7 +43,7 @@ struct ProtoSourceContentView: View {
 #Preview {
 	let viewModel = ProtoSourceListViewModel()
 	viewModel.selectedProtoSource = ProtoSource(id:UUID(), sourceFile: "file", workDir: "dir")
-	viewModel.protoContent = Google_Protobuf_FileDescriptorSet()
+	viewModel.protoContent = nil
 
 	return ProtoSourceContentView(viewModel: viewModel)
 }
