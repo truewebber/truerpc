@@ -9,17 +9,20 @@ class ProtoSourceManager: ObservableObject {
 	}
 
 	func addProtoSource(protoSource: ProtoSource) {
+		let sourceFileURL = URL(fileURLWithPath: protoSource.sourceFile)
+		var sourceFileBookmarkData: Data
+
 		do {
-			let sourceFileURL = URL(fileURLWithPath: protoSource.sourceFile)
-			let sourceFileBookmarkData = try sourceFileURL.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
-
-			protoSource.sourceFileBookmarkData = sourceFileBookmarkData
-
-			sources.append(protoSource)
-			saveProtoSources()
+			sourceFileBookmarkData = try sourceFileURL.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
 		} catch {
-			print("Error creating bookmark: \(error)")
+			generalLog.error("Error creating bookmark: \(error)")
+			return
 		}
+
+		protoSource.sourceFileBookmarkData = sourceFileBookmarkData
+
+		sources.append(protoSource)
+		saveProtoSources()
 	}
 
 	func removeProtoSources(at offsets: IndexSet) {
@@ -27,115 +30,95 @@ class ProtoSourceManager: ObservableObject {
 		saveProtoSources()
 	}
 
-	func readProtoContent(_ protoSource: ProtoSource) throws -> String {
+	func readProtoContent(protoSource: ProtoSource) throws -> String {
 		if protoSource.sourceFileBookmarkData == nil {
-			throw NSError(domain: "ProtoSourceManager", code: 2, userInfo: [NSLocalizedDescriptionKey: "proto source file bookmark data is nil"])
+			throw ProtoParseError.bookmarkIsNotSet
 		}
 
-		var url: URL
-
-		do {
-			url = try getFileURLAndUnlock(bookmarkData: protoSource.sourceFileBookmarkData!)
-		} catch {
-			throw error
-		}
+		let url = try getFileURLAndUnlock(bookmarkData: protoSource.sourceFileBookmarkData!)
 
 		defer {
 			lockFile(url: url)
 		}
 
-		let contents = try String(contentsOf: url)
-
-		return contents
+		return try String(contentsOf: url)
 	}
 
-	func getProtoDiscriptors(_ protoSource: ProtoSource) throws -> Google_Protobuf_FileDescriptorSet? {
+	func getProtoDiscriptors(protoSource: ProtoSource) throws -> Google_Protobuf_FileDescriptorSet? {
 		if protoSource.sourceFileBookmarkData == nil {
-			throw NSError(domain: "ProtoSourceManager", code: 2, userInfo: [NSLocalizedDescriptionKey: "proto source file bookmark data is nil"])
+			throw ProtoParseError.bookmarkIsNotSet
 		}
 
-		var url: URL
-
-		do {
-			url = try getFileURLAndUnlock(bookmarkData: protoSource.sourceFileBookmarkData!)
-		} catch {
-			throw error
-		}
+		let url = try getFileURLAndUnlock(bookmarkData: protoSource.sourceFileBookmarkData!)
 
 		defer {
 			lockFile(url: url)
 		}
-		
-		var fileDescriptorSet: Google_Protobuf_FileDescriptorSet
 
-		do {
-			let protoDescriptosFile = try TempFile()
+		return try getProtoDiscriptors(url: url, workDir: protoSource.workDir)
+	}
 
-			guard let protocPath = Bundle.main.path(forResource: "protoc", ofType: "") else {
-				generalLog.error("protoc doesn't exist in app bundle")
+	func getProtoDiscriptors(url: URL, workDir: String) throws -> Google_Protobuf_FileDescriptorSet? {
+		let protoDescriptosFile = try TempFile()
 
-				return nil
-			}
-
-			guard let includePath = Bundle.main.path(forResource: "include", ofType: "") else {
-				generalLog.error("include dir doesn't exist in app bundle")
-
-				return nil
-			}
-
-			let process = Process()
-			process.executableURL = URL(fileURLWithPath: protocPath)
-			process.arguments = [
-				"-I", protoSource.workDir,
-				"-I", includePath,
-				"-o", protoDescriptosFile.getFilePath(),
-				url.path(),
-			]
-
-			let pipe = Pipe()
-			process.standardOutput = pipe
-			process.standardError = pipe
-
-			try process.run()
-			process.waitUntilExit()
-
-			let data = pipe.fileHandleForReading.readDataToEndOfFile()
-			let output = String(data: data, encoding: .utf8) ?? ""
-
-			if process.terminationStatus != 0 {
-				generalLog.error("faied to execute protoc, process: \(process), output: \(output)")
-
-				return nil
-			}
-
-			let tempURL = URL(fileURLWithPath: protoDescriptosFile.getFilePath())
-			let protobufBytes = try Data(contentsOf: tempURL)
-
-			fileDescriptorSet = try Google_Protobuf_FileDescriptorSet(serializedBytes: protobufBytes)
-		} catch TempFile.TempFileError.fileCreationFailed {
-			generalLog.error("faied to create temp file")
-
-			return nil
-		} catch {
-			generalLog.error("faied validate proto: \(error)")
-
-			return nil
+		guard let protocPath = Bundle.main.path(forResource: "protoc", ofType: "") else {
+			throw ProtoParseError.protocNotFound
 		}
 
-		return fileDescriptorSet
+		guard let includePath = Bundle.main.path(forResource: "include", ofType: "") else {
+			throw ProtoParseError.protoIncludeNotFound
+		}
+
+		let process = Process()
+		process.executableURL = URL(fileURLWithPath: protocPath)
+		process.arguments = [
+			"-I", workDir,
+			"-I", includePath,
+			"-o", protoDescriptosFile.getFilePath(),
+			url.path(),
+		]
+
+		let pipe = Pipe()
+		process.standardOutput = pipe
+		process.standardError = pipe
+
+		try process.run()
+		process.waitUntilExit()
+
+		let data = pipe.fileHandleForReading.readDataToEndOfFile()
+		let output = String(data: data, encoding: .utf8) ?? ""
+		let returnCode = process.terminationStatus
+
+		if returnCode != 0 {
+			throw ProtoParseError.protoReturnsNonZeroCode(output: output, command: processCommandString(process), returnCode: returnCode)
+		}
+
+		let tempURL = URL(fileURLWithPath: protoDescriptosFile.getFilePath())
+		let protobufBytes = try Data(contentsOf: tempURL)
+
+		return try Google_Protobuf_FileDescriptorSet(serializedBytes: protobufBytes)
 	}
 	
+	private func processCommandString(_ process: Process) -> String {
+		let executable = process.executableURL?.path ?? ""
+		let arguments = process.arguments?.joined(separator: " ") ?? ""
+
+		return "\(executable) \(arguments)"
+	}
+
 	private func getFileURLAndUnlock(bookmarkData: Data) throws -> URL {
 		var url: URL
 		var isStale = false
 
 		do {
-			url = try URL(resolvingBookmarkData: bookmarkData,
-							  options: .withSecurityScope,
-							  relativeTo: nil,
-							  bookmarkDataIsStale: &isStale)
+			url = try URL(
+				resolvingBookmarkData: bookmarkData,
+				options: .withSecurityScope,
+				relativeTo: nil,
+				bookmarkDataIsStale: &isStale
+			)
 		} catch {
-			throw error
+			throw FileError.urlFromBookmark(error)
 		}
 
 		if isStale {
@@ -143,12 +126,12 @@ class ProtoSourceManager: ObservableObject {
 		}
 
 		guard url.startAccessingSecurityScopedResource() else {
-			throw NSError(domain: "ProtoSourceManager", code: 2, userInfo: [NSLocalizedDescriptionKey: "Failed to access security-scoped resource"])
+			throw FileError.startAccessingSecurityScopedResource
 		}
-		
+
 		return url
 	}
-	
+
 	private func lockFile(url: URL) {
 		url.stopAccessingSecurityScopedResource()
 	}

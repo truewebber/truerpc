@@ -48,13 +48,13 @@ class ProtoSourceListViewModel: ObservableObject {
 	
 	func readProtoContent(_ protoSource: ProtoSource) {
 		do {
-			let content = try manager.getProtoDiscriptors(protoSource)
+			let content = try manager.getProtoDiscriptors(protoSource: protoSource)
 			protoContent = content
 			selectedProtoSource = protoSource
 			errorMessage = nil
 		} catch {
-			print("Error reading file: \(error)")
-			errorMessage = "Error loading file content: \(error.localizedDescription)"
+			generalLog.error("Error loading proto content: \(error)")
+			errorMessage = "Error loading proto content"
 			protoContent = nil
 			selectedProtoSource = nil
 		}
