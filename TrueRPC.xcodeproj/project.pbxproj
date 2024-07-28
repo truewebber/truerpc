@@ -10,7 +10,6 @@
 		645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4622C559EA800A4B6E9 /* TempFile.swift */; };
 		645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */; };
 		645FC4672C5681D100A4B6E9 /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4662C5681D100A4B6E9 /* FileError.swift */; };
-		645FC4682C5692DD00A4B6E9 /* CustomFileInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647FDF022C405DBC00E19112 /* CustomFileInputField.swift */; };
 		645FC46C2C56DCFF00A4B6E9 /* AddProtoSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC46B2C56DCFF00A4B6E9 /* AddProtoSourceView.swift */; };
 		6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */; };
 		6487AE692C52C33F000D1ED0 /* ProtoSourceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */; };
@@ -99,15 +98,12 @@
 		645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoParseError.swift; sourceTree = "<group>"; };
 		645FC4662C5681D100A4B6E9 /* FileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileError.swift; sourceTree = "<group>"; };
 		645FC46B2C56DCFF00A4B6E9 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
-		647FDF022C405DBC00E19112 /* CustomFileInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFileInputField.swift; sourceTree = "<group>"; };
-		647FDF042C40603C00E19112 /* AddProtoSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceView.swift; sourceTree = "<group>"; };
 		6487AE662C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListViewModel.swift; sourceTree = "<group>"; };
 		6487AE682C52C33F000D1ED0 /* ProtoSourceContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceContentView.swift; sourceTree = "<group>"; };
 		6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceListView.swift; sourceTree = "<group>"; };
 		6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceRowView.swift; sourceTree = "<group>"; };
 		6487AE6E2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceManagementModule.swift; sourceTree = "<group>"; };
 		64A904982C4C3FA200085F88 /* protoc */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = protoc; sourceTree = "<group>"; };
-		64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProtoSourceController.swift; sourceTree = "<group>"; };
 		64A9049F2C4DC6EA00085F88 /* plugin.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = plugin.proto; sourceTree = "<group>"; };
 		64A904A12C4DC6EA00085F88 /* any.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = any.proto; sourceTree = "<group>"; };
 		64A904A22C4DC6EA00085F88 /* api.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = api.proto; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 		64A905042C50583400085F88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64A905072C51985C00085F88 /* ProtoSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSourceManager.swift; sourceTree = "<group>"; };
 		64BF73E12BC0060C003220E4 /* TrueRPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueRPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64BF73E62BC0060C003220E4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		64BF73E82BC0060C003220E4 /* ProtoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoSource.swift; sourceTree = "<group>"; };
 		64BF73EA2BC0060D003220E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64BF73EF2BC0060D003220E4 /* TrueRPC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrueRPC.entitlements; sourceTree = "<group>"; };
@@ -279,17 +274,6 @@
 			path = ProtoSourceManagement;
 			sourceTree = "<group>";
 		};
-		64A904FE2C50555B00085F88 /* OLD */ = {
-			isa = PBXGroup;
-			children = (
-				64BF73E62BC0060C003220E4 /* MainView.swift */,
-				647FDF042C40603C00E19112 /* AddProtoSourceView.swift */,
-				647FDF022C405DBC00E19112 /* CustomFileInputField.swift */,
-				64A9049B2C4C803500085F88 /* AddProtoSourceController.swift */,
-			);
-			path = OLD;
-			sourceTree = "<group>";
-		};
 		64A905032C5057EC00085F88 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +285,6 @@
 		64BF73D82BC0060C003220E4 = {
 			isa = PBXGroup;
 			children = (
-				64A904FE2C50555B00085F88 /* OLD */,
 				64BF73E32BC0060C003220E4 /* TrueRPC */,
 				64BF73F72BC0060D003220E4 /* TrueRPCTests */,
 				64BF74012BC0060D003220E4 /* TrueRPCUITests */,
@@ -491,7 +474,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6487AE6B2C52C3B5000D1ED0 /* ProtoSourceListView.swift in Sources */,
-				645FC4682C5692DD00A4B6E9 /* CustomFileInputField.swift in Sources */,
 				64A905062C51962900085F88 /* ProtoSource.swift in Sources */,
 				64A905022C50560200085F88 /* App.swift in Sources */,
 				645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */,

@@ -11,29 +11,23 @@ class ProtoSourceListViewModel: ObservableObject {
 	init(manager: ProtoSourceManager = ProtoSourceManager()) {
 		self.manager = manager
 	}
-
-	func addProtoSource() {
-		let panel = NSOpenPanel()
-		panel.allowsMultipleSelection = false
-		panel.canChooseDirectories = false
-		panel.allowedContentTypes = [UTType.text]
-		if panel.runModal() == .OK {
-			if let url = panel.urls.first {
-				let protoSource = ProtoSource(id: UUID(), sourceFile: url.path(), workDir: url.deletingLastPathComponent().path())
-
-				manager.addProtoSource(protoSource: protoSource)
-				objectWillChange.send()  // Notify observers of change
-			}
-		}
-	}
 	
+	enum ProtoSourceError: Error {
+		case protoIsNotValid
+	}
+
 	func addProtoSource(from url: URL) throws {
-		guard url.pathExtension == "proto" else {
-			throw NSError(domain: "ProtoSourceError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid file type. Please select a .proto file."])
+		let workDir = url.deletingLastPathComponent().path
+
+		do {
+			_ = try manager.getProtoDiscriptors(url: url, workDir: workDir)
+		} catch {
+			throw ProtoSourceError.protoIsNotValid
 		}
-		
-		let protoSource = ProtoSource(id: UUID(), sourceFile: url.path, workDir: url.deletingLastPathComponent().path)
-		manager.addProtoSource(protoSource: protoSource)
+
+		let protoSource = ProtoSource(id: UUID(), sourceFile: url.path, workDir: workDir)
+		manager.addProtoSource(protoSource)
+
 		objectWillChange.send()
 	}
 	

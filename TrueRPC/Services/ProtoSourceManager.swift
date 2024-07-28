@@ -8,7 +8,7 @@ class ProtoSourceManager: ObservableObject {
 		loadProtoSources()
 	}
 
-	func addProtoSource(protoSource: ProtoSource) {
+	func addProtoSource(_ protoSource: ProtoSource) {
 		let sourceFileURL = URL(fileURLWithPath: protoSource.sourceFile)
 		var sourceFileBookmarkData: Data
 
@@ -28,20 +28,6 @@ class ProtoSourceManager: ObservableObject {
 	func removeProtoSources(at offsets: IndexSet) {
 		sources.remove(atOffsets: offsets)
 		saveProtoSources()
-	}
-
-	func readProtoContent(protoSource: ProtoSource) throws -> String {
-		if protoSource.sourceFileBookmarkData == nil {
-			throw ProtoParseError.bookmarkIsNotSet
-		}
-
-		let url = try getFileURLAndUnlock(bookmarkData: protoSource.sourceFileBookmarkData!)
-
-		defer {
-			lockFile(url: url)
-		}
-
-		return try String(contentsOf: url)
 	}
 
 	func getProtoDiscriptors(protoSource: ProtoSource) throws -> Google_Protobuf_FileDescriptorSet? {

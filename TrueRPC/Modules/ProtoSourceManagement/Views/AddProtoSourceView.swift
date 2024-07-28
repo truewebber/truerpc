@@ -62,8 +62,10 @@ struct AddProtoSourceView: View {
 		do {
 			try viewModel.addProtoSource(from: url)
 			isPresented = false
+		} catch ProtoSourceListViewModel.ProtoSourceError.protoIsNotValid {
+			errorMessage = "chosen file isn't a valid proto"
 		} catch {
-			errorMessage = error.localizedDescription
+			errorMessage = "unknown error occurred"
 		}
 	}
 }
