@@ -27,7 +27,11 @@ class ProtoSourceListViewModel: ObservableObject {
 		}
 	}
 	
-	func addProtoSource(from url: URL) {
+	func addProtoSource(from url: URL) throws {
+		guard url.pathExtension == "proto" else {
+			throw NSError(domain: "ProtoSourceError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid file type. Please select a .proto file."])
+		}
+		
 		let protoSource = ProtoSource(id: UUID(), sourceFile: url.path, workDir: url.deletingLastPathComponent().path)
 		manager.addProtoSource(protoSource: protoSource)
 		objectWillChange.send()

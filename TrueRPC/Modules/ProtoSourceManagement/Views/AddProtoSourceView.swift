@@ -5,16 +5,24 @@ struct AddProtoSourceView: View {
 	@Binding var isPresented: Bool
 	@ObservedObject var viewModel: ProtoSourceListViewModel
 	@State private var selectedFileURL: URL?
+	@State private var errorMessage: String?
 	
 	var body: some View {
 		VStack(spacing: 20) {
 			Text("Add New Proto Source")
 				.font(.headline)
 			
-			if let url = selectedFileURL {
-				Text("Selected file: \(url.lastPathComponent)")
-			} else {
-				Text("No file selected")
+			VStack(alignment: .leading, spacing: 5) {
+				Text(errorMessage ?? "")
+					.font(.caption)
+					.foregroundColor(.red)
+					.frame(height: 20)
+				
+				if let url = selectedFileURL {
+					Text("Selected file: \(url.lastPathComponent)")
+				} else {
+					Text("No file selected")
+				}
 			}
 			
 			Button("Select File") {
@@ -23,10 +31,7 @@ struct AddProtoSourceView: View {
 			
 			HStack(spacing: 20) {
 				Button("Save") {
-					if let url = selectedFileURL {
-						viewModel.addProtoSource(from: url)
-						isPresented = false
-					}
+					saveProtoSource()
 				}
 				.disabled(selectedFileURL == nil)
 				
@@ -47,13 +52,31 @@ struct AddProtoSourceView: View {
 		panel.allowedContentTypes = [UTType.text]
 		if panel.runModal() == .OK {
 			selectedFileURL = panel.urls.first
+			errorMessage = nil
+		}
+	}
+	
+	private func saveProtoSource() {
+		guard let url = selectedFileURL else { return }
+
+		do {
+			try viewModel.addProtoSource(from: url)
+			isPresented = false
+		} catch {
+			errorMessage = error.localizedDescription
 		}
 	}
 }
 
 #Preview {
-	@State var isPresented = true
-	let viewModel = ProtoSourceListViewModel()
+	struct PreviewWrapper: View {
+		@State var isPresented = true
+		@StateObject var viewModel = ProtoSourceListViewModel()
+		
+		var body: some View {
+			AddProtoSourceView(isPresented: $isPresented, viewModel: viewModel)
+		}
+	}
 	
-	return AddProtoSourceView(isPresented: $isPresented, viewModel: viewModel)
+	return PreviewWrapper()
 }
