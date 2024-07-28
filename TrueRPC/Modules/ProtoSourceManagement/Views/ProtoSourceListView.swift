@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ProtoSourceListView: View {
 	@ObservedObject var viewModel: ProtoSourceListViewModel
+	@State private var isAddingProtoSource = false
 	
 	var body: some View {
 		List {
@@ -21,9 +22,12 @@ struct ProtoSourceListView: View {
 		.listStyle(SidebarListStyle())
 		.frame(minWidth: 200)
 		.toolbar {
-			Button(action: viewModel.addProtoSource) {
+			Button(action: { isAddingProtoSource = true }) {
 				Label("Add File", systemImage: "plus")
 			}
+		}
+		.sheet(isPresented: $isAddingProtoSource) {
+			AddProtoSourceView(isPresented: $isAddingProtoSource, viewModel: viewModel)
 		}
 	}
 }

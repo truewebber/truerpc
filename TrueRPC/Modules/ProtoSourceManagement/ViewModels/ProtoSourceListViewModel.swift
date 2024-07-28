@@ -27,6 +27,12 @@ class ProtoSourceListViewModel: ObservableObject {
 		}
 	}
 	
+	func addProtoSource(from url: URL) {
+		let protoSource = ProtoSource(id: UUID(), sourceFile: url.path, workDir: url.deletingLastPathComponent().path)
+		manager.addProtoSource(protoSource: protoSource)
+		objectWillChange.send()
+	}
+	
 	func deleteProtoSources(at offsets: IndexSet) {
 		manager.removeProtoSources(at: offsets)
 		if selectedProtoSource != nil && !manager.sources.contains(where: { $0.id == selectedProtoSource!.id }) {
