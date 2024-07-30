@@ -13,7 +13,11 @@ class ProtoSourceManager: ObservableObject {
 		var sourceFileBookmarkData: Data
 
 		do {
-			sourceFileBookmarkData = try sourceFileURL.bookmarkData(options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess], includingResourceValuesForKeys: nil, relativeTo: nil)
+			sourceFileBookmarkData = try sourceFileURL.bookmarkData(
+				options: [.withSecurityScope, .securityScopeAllowOnlyReadAccess],
+				includingResourceValuesForKeys: nil,
+				relativeTo: nil
+			)
 		} catch {
 			generalLog.error("Error creating bookmark: \(error)")
 			return
