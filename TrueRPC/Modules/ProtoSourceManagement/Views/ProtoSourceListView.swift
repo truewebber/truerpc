@@ -3,7 +3,7 @@ import SwiftUI
 struct ProtoSourceListView: View {
 	@ObservedObject var viewModel: ProtoSourceListViewModel
 	@State private var isAddingProtoSource = false
-	
+
 	var body: some View {
 		List {
 			ForEach(viewModel.manager.sources) { protoSource in

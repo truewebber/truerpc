@@ -5,8 +5,16 @@ struct ProtoSourceRowView: View {
 	let action: () -> Void
 
 	var body: some View {
-		Text(protoSource.sourceFile)
-			.onTapGesture(perform: action)
+		DisclosureGroup() {
+			ForEach(protoSource.getServices(), id: \.self) { service in
+				Text(service)
+			}
+		} label: {
+			Text(protoSource.sourceFile)
+				.font(.subheadline)
+				.fontWeight(.semibold)
+		}
+		.onTapGesture(perform: action)
 	}
 }
 

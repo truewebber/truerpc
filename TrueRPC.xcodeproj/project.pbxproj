@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		644958F02C597786006FFEF9 /* FileSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644958EF2C597786006FFEF9 /* FileSelectionView.swift */; };
 		645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4622C559EA800A4B6E9 /* TempFile.swift */; };
 		645FC4652C567B8400A4B6E9 /* ProtoParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */; };
 		645FC4672C5681D100A4B6E9 /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FC4662C5681D100A4B6E9 /* FileError.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		644958EF2C597786006FFEF9 /* FileSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSelectionView.swift; sourceTree = "<group>"; };
 		645FC4622C559EA800A4B6E9 /* TempFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFile.swift; sourceTree = "<group>"; };
 		645FC4642C567B8400A4B6E9 /* ProtoParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoParseError.swift; sourceTree = "<group>"; };
 		645FC4662C5681D100A4B6E9 /* FileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileError.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				6487AE6A2C52C3B5000D1ED0 /* ProtoSourceListView.swift */,
 				6487AE6C2C52C58F000D1ED0 /* ProtoSourceRowView.swift */,
 				645FC46B2C56DCFF00A4B6E9 /* AddProtoSourceView.swift */,
+				644958EF2C597786006FFEF9 /* FileSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				6487AE6F2C52C60E000D1ED0 /* ProtoSourceManagementModule.swift in Sources */,
 				645FC4672C5681D100A4B6E9 /* FileError.swift in Sources */,
 				6487AE672C52BF9C000D1ED0 /* ProtoSourceListViewModel.swift in Sources */,
+				644958F02C597786006FFEF9 /* FileSelectionView.swift in Sources */,
 				64A905002C50557600085F88 /* ContentView.swift in Sources */,
 				645FC4632C559EA800A4B6E9 /* TempFile.swift in Sources */,
 			);

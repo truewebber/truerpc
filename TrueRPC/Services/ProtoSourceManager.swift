@@ -160,6 +160,13 @@ class ProtoSourceManager: ObservableObject {
 			if let workDirBookmarkData = fileInfo["workDirBookmarkData"] as? Data {
 				source.workDirBookmarkData = workDirBookmarkData
 			}
+			
+			do {
+				let discriptors = try getProtoDiscriptors(protoSource: source)
+				source.discriptors = discriptors
+			} catch {
+				return nil
+			}
 
 			return source
 		}

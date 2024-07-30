@@ -6,11 +6,7 @@ struct ProtoSourceContentView: View {
 
 	var body: some View {
 		VStack {
-			if let errorMessage = viewModel.errorMessage {
-				Text(errorMessage)
-					.foregroundColor(.red)
-					.frame(maxWidth: .infinity, maxHeight: .infinity)
-			} else if let protoContent = viewModel.protoContent {
+			if let protoContent = viewModel.protoContent {
 				ScrollView {
 					Text(formatProtoContent(protoContent))
 						.frame(maxWidth: .infinity, maxHeight: .infinity)
